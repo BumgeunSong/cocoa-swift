@@ -25,6 +25,7 @@
 /* Begin PBXFileReference section */
 		52CA91082733834300943698 /* LadderGame */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = LadderGame; sourceTree = BUILT_PRODUCTS_DIR; };
 		52CA910B2733834300943698 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		52CA91122733852100943698 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +42,7 @@
 		52CA90FF2733834200943698 = {
 			isa = PBXGroup;
 			children = (
+				52CA91122733852100943698 /* README.md */,
 				52CA910A2733834300943698 /* LadderGame */,
 				52CA91092733834300943698 /* Products */,
 			);
