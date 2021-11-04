@@ -68,10 +68,4 @@ var myLadderGame = LadderGame()
 myLadderGame.startGame()
 
 
-//
-//if let numberOfPeople = getNumberOfPeople() {
-//    printLadder(numberOfPeople, height: 4)
-//}
-
-
 
