@@ -30,7 +30,18 @@ func printLadder(_ numberOfPeople: Int, height: Int) {
         }
         ladder.append(row)
     }
-    print(ladder)
+    for row in ladder {
+        var rowString = "|"
+        for step in row {
+            if step == 1 {
+                rowString += "-"
+            } else {
+                rowString += " "
+            }
+            rowString += "|"
+        }
+        print(rowString)
+    }
 }
 
 if let numberOfPeople = getNumberOfPeople() {
