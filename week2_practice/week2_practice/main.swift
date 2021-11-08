@@ -17,15 +17,14 @@ import Foundation
 //myMagicSquare.printMagicSquare(myMagicSquare.makeMagicSquare(row: 7))
 
 var myValidator = Validator()
-print(myValidator.IDValidator(id: "Hello-world12"))
-print(myValidator.IDValidator(id: "Hello-world1231114"))
-print(myValidator.IDValidator(id: "Hello45-world1234"))
-print(myValidator.IDValidator(id: "showme$$"))
+//print(myValidator.IDValidator(id: "Hello-world12"))
+//print(myValidator.IDValidator(id: "Hello-world1231114"))
+//print(myValidator.IDValidator(id: "Hello45-world1234"))
+//print(myValidator.IDValidator(id: "showme$$"))
 
-print(Character("-").asciiValue!)
 
-extension String {
-    subscript(_ i: Int) -> String {
-        return String(self[index(startIndex, offsetBy: i)])
-    }
-}
+print("level: ", myValidator.passwordValidator(password: "1182"))
+print("level: ", myValidator.passwordValidator(password: "abcd"))
+print("level: ", myValidator.passwordValidator(password: "iosdeveloper"))
+print("level: ", myValidator.passwordValidator(password: "123231jb4a2"))
+print("level: ", myValidator.passwordValidator(password: "airplane13!@"))
