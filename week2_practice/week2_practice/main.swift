@@ -7,5 +7,6 @@
 
 import Foundation
 
-print("Hello, World!")
-
+var myArray = ArrayPractice()
+myArray.printArray(array: myArray.fillArray())
+myArray.printArray(array: myArray.setBoolArray(max: 5), newChar: "$")
