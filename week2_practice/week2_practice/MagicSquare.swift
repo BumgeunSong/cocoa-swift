@@ -9,7 +9,6 @@ import Foundation
 
 
 struct MagicSquare {
-    var magicSquare: Array<Array<Int>> = []
     var pointer: (x: Int, y: Int) = (0, 0)
     var row: Int = 0
     
@@ -21,17 +20,24 @@ struct MagicSquare {
         
         self.row = row
         self.pointer = ((row - 1) / 2, 0)
-        magicSquare = []
+        var magicSquare: Array<Array<Int>> = []
+        
         for _ in 1...row {
-            magicSquare.append(Array(repeating: 0, count: row))
+            var row = Array(repeating: 0, count: row) // [0,0,0,0,0] X 5
+            magicSquare.append(row)
         }
         
-        for number in 1...row*row {
+        // 1. 맨 위 가운데에 1을 넣는다.
+        // 2. 위쪽 대각선으로 움직인다.
+        // 3. 거기에 숫자가 없으면 다음 숫자를 넣는다.
+        // 4. 거기에 숫자가 있으면 아래로 한 칸 밑으로 움직인 다음 숫자를 넣는다.
+        // 5. 모든 수가 입력될 때까지 반복한다.
+        
+        for number in 1...row*row { // 1~25
             if magicSquare[pointer.y][pointer.x] != 0 {
                 move2DownAndLeft()
                 moveInside()
             }
-            
             magicSquare[pointer.y][pointer.x] = number
 
             moveUpAndRight()

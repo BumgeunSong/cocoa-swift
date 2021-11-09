@@ -32,8 +32,7 @@ struct Validator {
         //        for (index, char) in id.enumerated() {
         //            print(id[index + 1])
         //        }
-        //
-        //
+
         
         
         var idArray: [Int] = []
