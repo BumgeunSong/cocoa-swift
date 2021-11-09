@@ -15,6 +15,7 @@
 		5244F96B273A528B005ABC62 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5244F969273A528B005ABC62 /* LaunchScreen.storyboard */; };
 		5244F973273A69ED005ABC62 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 5244F972273A69EC005ABC62 /* README.md */; };
 		5244F975273A6AC7005ABC62 /* MeasureApp.png in Resources */ = {isa = PBXBuildFile; fileRef = 5244F974273A6AC7005ABC62 /* MeasureApp.png */; };
+		5244F977273A6BC5005ABC62 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 5244F976273A6BC5005ABC62 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		5244F96C273A528B005ABC62 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5244F972273A69EC005ABC62 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		5244F974273A6AC7005ABC62 /* MeasureApp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MeasureApp.png; sourceTree = "<group>"; };
+		5244F976273A6BC5005ABC62 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +46,7 @@
 		5244F952273A5282005ABC62 = {
 			isa = PBXGroup;
 			children = (
+				5244F976273A6BC5005ABC62 /* README.md */,
 				5244F95D273A5282005ABC62 /* MeasureApp */,
 				5244F95C273A5282005ABC62 /* Products */,
 			);
@@ -131,6 +134,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5244F977273A6BC5005ABC62 /* README.md in Resources */,
 				5244F96B273A528B005ABC62 /* LaunchScreen.storyboard in Resources */,
 				5244F968273A528B005ABC62 /* Assets.xcassets in Resources */,
 				5244F975273A6AC7005ABC62 /* MeasureApp.png in Resources */,
