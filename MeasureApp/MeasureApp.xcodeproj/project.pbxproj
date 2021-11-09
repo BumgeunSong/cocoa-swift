@@ -13,6 +13,8 @@
 		5244F966273A5282005ABC62 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5244F964273A5282005ABC62 /* Main.storyboard */; };
 		5244F968273A528B005ABC62 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5244F967273A528B005ABC62 /* Assets.xcassets */; };
 		5244F96B273A528B005ABC62 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5244F969273A528B005ABC62 /* LaunchScreen.storyboard */; };
+		5244F973273A69ED005ABC62 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 5244F972273A69EC005ABC62 /* README.md */; };
+		5244F975273A6AC7005ABC62 /* MeasureApp.png in Resources */ = {isa = PBXBuildFile; fileRef = 5244F974273A6AC7005ABC62 /* MeasureApp.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		5244F967273A528B005ABC62 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5244F96A273A528B005ABC62 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5244F96C273A528B005ABC62 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5244F972273A69EC005ABC62 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		5244F974273A6AC7005ABC62 /* MeasureApp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MeasureApp.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +67,8 @@
 				5244F967273A528B005ABC62 /* Assets.xcassets */,
 				5244F969273A528B005ABC62 /* LaunchScreen.storyboard */,
 				5244F96C273A528B005ABC62 /* Info.plist */,
+				5244F972273A69EC005ABC62 /* README.md */,
+				5244F974273A6AC7005ABC62 /* MeasureApp.png */,
 			);
 			path = MeasureApp;
 			sourceTree = "<group>";
@@ -127,6 +133,8 @@
 			files = (
 				5244F96B273A528B005ABC62 /* LaunchScreen.storyboard in Resources */,
 				5244F968273A528B005ABC62 /* Assets.xcassets in Resources */,
+				5244F975273A6AC7005ABC62 /* MeasureApp.png in Resources */,
+				5244F973273A69ED005ABC62 /* README.md in Resources */,
 				5244F966273A5282005ABC62 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
