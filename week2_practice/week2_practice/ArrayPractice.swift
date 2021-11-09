@@ -20,7 +20,6 @@ struct ArrayPractice {
 
             for col in 1...5 {
                 if col <= row {
-                    rowArray.append(col)
                     rowArray.append(5 * (row - 1) + col)
                 }
             }
