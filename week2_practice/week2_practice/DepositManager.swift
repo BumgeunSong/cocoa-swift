@@ -23,8 +23,9 @@ struct DepositManager {
         }
     }
     
-    func calculateAmount(dat: Int, amount: Int) -> Double {
-        return 0.0
+    func calculateAmount(day: Int, amount: Int) -> Double {
+        let interestRate = getInterestRate(byDay: day)
+        return Double(amount) * (1.0 + interestRate)
     }
     
     func testInterest(unitDay: Int) -> Double {

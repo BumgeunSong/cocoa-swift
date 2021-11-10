@@ -26,4 +26,9 @@ print(myDepositeManager.getInterestRate(byDay: 181))
 print(myDepositeManager.getInterestRate(byDay: 365))
 print(myDepositeManager.getInterestRate(byDay: -365))
 
+//MARK: - test case: calculateAmount()
+print(myDepositeManager.calculateAmount(day: 0, amount: 100))
+print(myDepositeManager.calculateAmount(day: 3, amount: 100))
+print(myDepositeManager.calculateAmount(day: 181, amount: 100))
+print(myDepositeManager.calculateAmount(day: 365, amount: 100))
 
