@@ -34,15 +34,20 @@ var myDepositeManager = DepositManager()
 
 //MARK: - test case: testInterest()
 
-func testInterest(unitDay: Int) -> Double {
-    let myDepositeManager = DepositManager()
-    for day in 1...365 {
-        if day % unitDay == 0 {
-            print("Day \(day):", myDepositeManager.calculateAmount(day: day, amount: 100))
-        }
-    }
-    return myDepositeManager.calculateAmount(day: 365, amount: 100)
-}
+//func testInterest(unitDay: Int) -> Double {
+//    let myDepositeManager = DepositManager()
+//    for day in 1...365 {
+//        if day % unitDay == 0 {
+//            print("Day \(day):", myDepositeManager.calculateAmount(day: day, amount: 100))
+//        }
+//    }
+//    return myDepositeManager.calculateAmount(day: 365, amount: 100)
+//}
+//
+//print(testInterest(unitDay: 30))
 
-print(testInterest(unitDay: 30))
+//MARK: - test case: newGame()
+
+var bullsAndCows = BullsAndCows()
+bullsAndCows.newGame()
 

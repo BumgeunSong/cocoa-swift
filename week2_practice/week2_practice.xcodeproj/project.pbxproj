@@ -12,6 +12,7 @@
 		5244F94F2738D4CA005ABC62 /* MagicSquare.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5244F94E2738D4C9005ABC62 /* MagicSquare.swift */; };
 		5244F9512738ED4A005ABC62 /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5244F9502738ED4A005ABC62 /* Validator.swift */; };
 		52808C73273B973E00D5A564 /* DepositManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52808C72273B973E00D5A564 /* DepositManager.swift */; };
+		52808C75273B9CB000D5A564 /* bullsAndCows.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52808C74273B9CB000D5A564 /* bullsAndCows.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -33,6 +34,7 @@
 		5244F94E2738D4C9005ABC62 /* MagicSquare.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagicSquare.swift; sourceTree = "<group>"; };
 		5244F9502738ED4A005ABC62 /* Validator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
 		52808C72273B973E00D5A564 /* DepositManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepositManager.swift; sourceTree = "<group>"; };
+		52808C74273B9CB000D5A564 /* bullsAndCows.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bullsAndCows.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +72,7 @@
 				5244F94E2738D4C9005ABC62 /* MagicSquare.swift */,
 				5244F9502738ED4A005ABC62 /* Validator.swift */,
 				52808C72273B973E00D5A564 /* DepositManager.swift */,
+				52808C74273B9CB000D5A564 /* bullsAndCows.swift */,
 			);
 			path = week2_practice;
 			sourceTree = "<group>";
@@ -134,6 +137,7 @@
 			files = (
 				5244F9512738ED4A005ABC62 /* Validator.swift in Sources */,
 				5244F94F2738D4CA005ABC62 /* MagicSquare.swift in Sources */,
+				52808C75273B9CB000D5A564 /* bullsAndCows.swift in Sources */,
 				5244F94D2738BCF5005ABC62 /* ArrayPractice.swift in Sources */,
 				5244F9462738BBD0005ABC62 /* main.swift in Sources */,
 				52808C73273B973E00D5A564 /* DepositManager.swift in Sources */,
