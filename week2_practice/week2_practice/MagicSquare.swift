@@ -23,8 +23,7 @@ struct MagicSquare {
         var magicSquare: Array<Array<Int>> = []
         
         for _ in 1...row {
-            var row = Array(repeating: 0, count: row) // [0,0,0,0,0] X 5
-            magicSquare.append(row)
+            magicSquare.append(Array(repeating: 0, count: row))
         }
         
         // 1. 맨 위 가운데에 1을 넣는다.

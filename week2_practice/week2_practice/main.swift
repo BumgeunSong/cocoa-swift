@@ -7,30 +7,13 @@
 
 import Foundation
 
-var myArray = ArrayPractice() // class , struct intitalizer
-myArray.printArray(array: myArray.fillArray())
-myArray.printArray(array: myArray.setBoolArray(max: 5), newChar: "$")
-
-var myMagicSquare = MagicSquare()
-myMagicSquare.printMagicSquare(myMagicSquare.makeMagicSquare(row: 3))
-myMagicSquare.printMagicSquare(myMagicSquare.makeMagicSquare(row: 5))
-myMagicSquare.printMagicSquare(myMagicSquare.makeMagicSquare(row: 7))
-
-
 var myValidator = Validator()
 
-//print(myValidator.IDValidator(id: "Hello-world12"))
-//print(myValidator.IDValidator(id: "Hello-world1231114"))
-//print(myValidator.IDValidator(id: "Hello45-world1234"))
-//print(myValidator.IDValidator(id: "showme$$"))
+//MARK: - test case: IDValidator
 
-//print("level: ", myValidator.passwordValidator(password: "1182"))
-//print("level: ", myValidator.passwordValidator(password: "abcd"))
-//print("level: ", myValidator.passwordValidator(password: "iosdeveloper"))
-//print("level: ", myValidator.passwordValidator(password: "123231jb4a2"))
-//print("level: ", myValidator.passwordValidator(password: "airplane13!@"))
+print(myValidator.IDValidator(id: "helo23yo45"), "should be true")
+print(myValidator.IDValidator(id: "helo23yo456"), "should be false")
+print(myValidator.IDValidator(id: "isp555-23"), "should be false")
+print(myValidator.IDValidator(id: "isp5-5523"), "should be true")
 
-print(myValidator.socialNumberValidator(socialNumber: "930615-1010845"))
-print(myValidator.socialNumberValidator(socialNumber: "681128-2466713"))
-print(myValidator.socialNumberValidator(socialNumber: "950625-1012835"))
-print(myValidator.socialNumberValidator(socialNumber: "950625-abced"))
+

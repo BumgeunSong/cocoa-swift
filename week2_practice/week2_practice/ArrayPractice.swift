@@ -9,10 +9,6 @@ import Foundation
 
 struct ArrayPractice {
     func fillArray() -> [[Int]] {
-        // 1. 비어있는 변수, 타입 선언
-        // 2. for 문으로 채우기
-        // 3. 해당 변수 return.
-        
         var result: [[Int]] = []
 
         for row in 1...5 {

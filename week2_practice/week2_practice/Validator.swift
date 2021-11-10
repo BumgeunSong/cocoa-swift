@@ -27,32 +27,24 @@ struct Validator {
         // idValidator
         // 같은 숫자가 연속해서 3회 이상 나오면 실패 111, 222
         // 숫자가 연번으로 3개나오면 실패 123, 234
-        
-        // String의 한 글자씩 loop를 돌리면서, 해당 string의 앞글자 (현재 index - 1)과 다음 글자 (현재 index + 1) 에 접근할 수 있는 방법이 뭐가 있을까?
-        //        for (index, char) in id.enumerated() {
-        //            print(id[index + 1])
-        //        }
+        for index in 1..<id.count - 1 {
+            let currentIndex = id.index(id.startIndex, offsetBy: index)
+            let currentChar = id[id.index(id.startIndex, offsetBy: index)]
+            
+            if let current = currentChar.wholeNumberValue {
+                let prevChar = id[id.index(before: currentIndex)]
+                let nextChar = id[id.index(after: currentIndex)]
+                if let prev = prevChar.wholeNumberValue, let next = nextChar.wholeNumberValue {
+                    if current == prev && current == next {
+                        return false
+                    } else if current - 1 == prev && current + 1 == next {
+                        return false
+                    }
+                }
+            }
+         }
 
         
-        
-        var idArray: [Int] = []
-        for char in id {
-            if char.isWholeNumber {
-                idArray.append(char.wholeNumberValue!)
-            }
-        }
-        if !idArray.isEmpty {
-            for index in 1..<idArray.count - 1 {
-                let current = idArray[index], prev = idArray[index - 1], next = idArray[index + 1]
-                
-                if prev == current && next == current {
-                    return false
-                }
-                if prev == current - 1 && next == current + 1 {
-                    return false
-                }
-            }
-        }
         // 위 조건을 모두 통과하면 성공
         return true
     }
