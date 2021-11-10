@@ -19,16 +19,30 @@ var myValidator = Validator()
 //MARK: - test case: getInterestRate()
 
 var myDepositeManager = DepositManager()
-print(myDepositeManager.getInterestRate(byDay: 0))
-print(myDepositeManager.getInterestRate(byDay: 90))
-print(myDepositeManager.getInterestRate(byDay: 91))
-print(myDepositeManager.getInterestRate(byDay: 181))
-print(myDepositeManager.getInterestRate(byDay: 365))
-print(myDepositeManager.getInterestRate(byDay: -365))
+//print(myDepositeManager.getInterestRate(byDay: 0))
+//print(myDepositeManager.getInterestRate(byDay: 90))
+//print(myDepositeManager.getInterestRate(byDay: 91))
+//print(myDepositeManager.getInterestRate(byDay: 181))
+//print(myDepositeManager.getInterestRate(byDay: 365))
+//print(myDepositeManager.getInterestRate(byDay: -365))
 
 //MARK: - test case: calculateAmount()
-print(myDepositeManager.calculateAmount(day: 0, amount: 100))
-print(myDepositeManager.calculateAmount(day: 3, amount: 100))
-print(myDepositeManager.calculateAmount(day: 181, amount: 100))
-print(myDepositeManager.calculateAmount(day: 365, amount: 100))
+//print(myDepositeManager.calculateAmount(day: 0, amount: 100))
+//print(myDepositeManager.calculateAmount(day: 3, amount: 100))
+//print(myDepositeManager.calculateAmount(day: 181, amount: 100))
+//print(myDepositeManager.calculateAmount(day: 365, amount: 100))
+
+//MARK: - test case: testInterest()
+
+func testInterest(unitDay: Int) -> Double {
+    let myDepositeManager = DepositManager()
+    for day in 1...365 {
+        if day % unitDay == 0 {
+            print("Day \(day):", myDepositeManager.calculateAmount(day: day, amount: 100))
+        }
+    }
+    return myDepositeManager.calculateAmount(day: 365, amount: 100)
+}
+
+print(testInterest(unitDay: 30))
 
