@@ -9,6 +9,7 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var levelView: UIView!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var passwordInput: UITextField!

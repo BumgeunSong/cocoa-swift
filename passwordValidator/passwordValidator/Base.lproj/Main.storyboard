@@ -57,7 +57,8 @@
                                     <color key="baseBackgroundColor" red="0.73333333329999995" green="0.88235294119999996" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="checkPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BK0-mI-YmH"/>
+                                    <action selector="buttonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2bz-Gn-xKI"/>
+                                    <action selector="checkPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hTP-jK-YAv"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -68,6 +69,7 @@
                         <outlet property="descriptionLabel" destination="aRA-Op-bRI" id="GAF-JZ-DV4"/>
                         <outlet property="levelView" destination="h3B-t9-w3c" id="pC1-J0-Zdv"/>
                         <outlet property="passwordInput" destination="slw-xv-gge" id="d02-09-ow5"/>
+                        <outlet property="textField" destination="slw-xv-gge" id="H7G-qb-kai"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

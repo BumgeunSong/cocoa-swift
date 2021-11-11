@@ -12,10 +12,9 @@ struct BullsAndCows {
     var number: [Int]?
     
     mutating func newGame() {
-        number = Array(repeating: 0, count: 3).map({ n in
-            Int.random(in: 0...9)
-        })
+        number = Array(repeating: Int.random(in: 0...9), count: 3)
         print("Let's start game!")
+        
         if showGameScore() {
             print("Wow, you win! 🙌")
         } else {
@@ -28,8 +27,9 @@ struct BullsAndCows {
         var strikeCount = 0
         var ballCount = 0
         let guessArray = [guess / 100, (guess % 100) / 10, guess % 10]
+        
         if let numberArray = number {
-            for n in 0..<numberArray.count {
+            for n in 0..<numberArray.count { // 0, 1, 2
                 if guessArray[n] == numberArray[n] {
                     strikeCount += 1
                 } else if numberArray.contains(guessArray[n]) {
@@ -49,6 +49,7 @@ struct BullsAndCows {
             print("You have \(9 - trial) chances left.")
             print("Enter your guess: ")
             let input = readLine()?.trimmingCharacters(in: .whitespacesAndNewlines)
+            
             if input!.count == 3 {
                 if let guess = Int(input!) {
                     trial += 1
