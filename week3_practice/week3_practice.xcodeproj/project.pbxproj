@@ -10,6 +10,7 @@
 		BC1AECCB2742015C00920813 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1AECCA2742015C00920813 /* main.swift */; };
 		BC1AECD2274210FA00920813 /* Matrix.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1AECD1274210FA00920813 /* Matrix.swift */; };
 		BC1AECD4274221CC00920813 /* Binary.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1AECD3274221CC00920813 /* Binary.swift */; };
+		BC1AECD62742284400920813 /* BubbleSort.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1AECD52742284400920813 /* BubbleSort.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -29,6 +30,7 @@
 		BC1AECCA2742015C00920813 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		BC1AECD1274210FA00920813 /* Matrix.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Matrix.swift; sourceTree = "<group>"; };
 		BC1AECD3274221CC00920813 /* Binary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Binary.swift; sourceTree = "<group>"; };
+		BC1AECD52742284400920813 /* BubbleSort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleSort.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 				BC1AECCA2742015C00920813 /* main.swift */,
 				BC1AECD1274210FA00920813 /* Matrix.swift */,
 				BC1AECD3274221CC00920813 /* Binary.swift */,
+				BC1AECD52742284400920813 /* BubbleSort.swift */,
 			);
 			path = week3_practice;
 			sourceTree = "<group>";
@@ -129,6 +132,7 @@
 				BC1AECD2274210FA00920813 /* Matrix.swift in Sources */,
 				BC1AECD4274221CC00920813 /* Binary.swift in Sources */,
 				BC1AECCB2742015C00920813 /* main.swift in Sources */,
+				BC1AECD62742284400920813 /* BubbleSort.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
