@@ -31,7 +31,7 @@
                                     <fontDescription key="titleFontDescription" type="boldSystem" pointSize="30"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="addButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oza-1t-vZi"/>
+                                    <action selector="buttonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cq6-5W-Xvw"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lGM-YP-ilv">
@@ -42,7 +42,7 @@
                                     <fontDescription key="titleFontDescription" type="boldSystem" pointSize="30"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="subtractButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Dfq-mH-KSX"/>
+                                    <action selector="buttonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="j3D-cu-pzo"/>
                                 </connections>
                             </button>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4ow-NL-9WA">
@@ -64,7 +64,7 @@
                         <outlet property="addButton" destination="pIK-on-QxG" id="sYl-1I-kMA"/>
                         <outlet property="numberLabel" destination="TeL-zA-SGO" id="gQ5-WG-S6f"/>
                         <outlet property="progressBar" destination="4ow-NL-9WA" id="anr-3L-7v8"/>
-                        <outlet property="subtractButton" destination="lGM-YP-ilv" id="uML-07-gPW"/>
+                        <outlet property="subtractButton" destination="lGM-YP-ilv" id="Itb-fV-shu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

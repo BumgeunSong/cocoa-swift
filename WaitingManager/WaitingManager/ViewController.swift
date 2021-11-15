@@ -19,32 +19,31 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        addButton.addTarget(self, action: #selector(reloadProgress), for: .touchUpInside)
-        subtractButton.addTarget(self, action: #selector(reloadProgress), for: .touchUpInside)
     }
 
-    @IBAction func addButtonPressed(_ sender: UIButton) {
-        numberOfPeopleWaiting += 1
-        reloadLabel()
-        reloadIsEnable()
+    @IBAction func buttonPressed(_ sender: UIButton) {
+        if let title = sender.titleLabel?.text {
+            if title == "대기" {
+                numberOfPeopleWaiting += 1
+            } else if title == "완료" {
+                numberOfPeopleWaiting -= 1
+            }
+            reloadLabel()
+            reloadIsEnable()
+            reloadProgress()
+        }
     }
-    
-    @IBAction func subtractButtonPressed(_ sender: UIButton) {
-        numberOfPeopleWaiting -= 1
-        reloadLabel()
-        reloadIsEnable()
-    }
-    
+
     func reloadIsEnable() {
-        addButton.isEnabled = numberOfPeopleWaiting < 20
-        subtractButton.isEnabled = numberOfPeopleWaiting > 0
+        self.addButton.isEnabled = numberOfPeopleWaiting < 20
+        self.subtractButton.isEnabled = numberOfPeopleWaiting > 0
     }
     
     func reloadLabel() {
         numberLabel.text = "\(numberOfPeopleWaiting) 명"
     }
     
-    @objc func reloadProgress() {
+    func reloadProgress() {
         progressBar.setProgress(Float(numberOfPeopleWaiting) / 20.0, animated: true)
     }
 }
