@@ -18,16 +18,18 @@ import Foundation
 
 // MARK: - 이진수 클래스
 
-//let binary = Binary(with: 5)
-//
-//print(binary)
-//print(binary.count)
-//print(binary.find(by: 3))
+let binary = Binary(with: 5)
+
+print(binary)
+print(binary.count)
+print(binary.find(by: 3))
 
 // MARK: - 거품 정렬 BubbleSort 클래스
+//
+//let bubbleSort = BubbleSort([2,1,95,3,44,72,103,13,5,39,22,50])
+//print(bubbleSort.values)
+//print(bubbleSort.sorted(isAscending: true))
+//print(bubbleSort.sorted(isAscending: false))
 
-let bubbleSort = BubbleSort([2,1,95,3,44,72,103,13,5,39,22,50])
-print(bubbleSort.values)
-print(bubbleSort.sorted(isAscending: true))
-print(bubbleSort.sorted(isAscending: false))
+
 

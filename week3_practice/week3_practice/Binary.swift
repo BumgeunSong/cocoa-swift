@@ -33,12 +33,9 @@ class Binary {
     func find(by bitcount: Int) -> Array<String> {
         // 초기화한 values 배열 값 중에서 1인 비트 개수가 bitcount개 있는 값만 배열에 문자열로 담아서 return 한다.
         return values.filter { binary in
-            let itemCount = binary.reduce(0) { partialResult, bit in
-                return bit == Character("1") ? partialResult + 1 : partialResult
-            }
-            return itemCount == bitcount
+            let count1 = binary.filter { $0 == "1" }.count
+            return count1 == bitcount
         }
-        
     }
 }
 
