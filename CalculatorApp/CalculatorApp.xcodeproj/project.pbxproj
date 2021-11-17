@@ -13,6 +13,7 @@
 		BC3EBAB42744C07100CCE101 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC3EBAB22744C07100CCE101 /* Main.storyboard */; };
 		BC3EBAB62744C07200CCE101 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC3EBAB52744C07200CCE101 /* Assets.xcassets */; };
 		BC3EBAB92744C07200CCE101 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC3EBAB72744C07200CCE101 /* LaunchScreen.storyboard */; };
+		BC3EBAC12744E32B00CCE101 /* CalculatorLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3EBAC02744E32B00CCE101 /* CalculatorLogic.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		BC3EBAB52744C07200CCE101 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BC3EBAB82744C07200CCE101 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BC3EBABA2744C07200CCE101 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BC3EBAC02744E32B00CCE101 /* CalculatorLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorLogic.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				BC3EBAAC2744C07100CCE101 /* AppDelegate.swift */,
 				BC3EBAAE2744C07100CCE101 /* SceneDelegate.swift */,
 				BC3EBAB02744C07100CCE101 /* ViewController.swift */,
+				BC3EBAC02744E32B00CCE101 /* CalculatorLogic.swift */,
 				BC3EBAB22744C07100CCE101 /* Main.storyboard */,
 				BC3EBAB52744C07200CCE101 /* Assets.xcassets */,
 				BC3EBAB72744C07200CCE101 /* LaunchScreen.storyboard */,
@@ -138,6 +141,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC3EBAC12744E32B00CCE101 /* CalculatorLogic.swift in Sources */,
 				BC3EBAB12744C07100CCE101 /* ViewController.swift in Sources */,
 				BC3EBAAD2744C07100CCE101 /* AppDelegate.swift in Sources */,
 				BC3EBAAF2744C07100CCE101 /* SceneDelegate.swift in Sources */,
