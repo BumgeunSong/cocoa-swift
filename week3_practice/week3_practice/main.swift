@@ -18,11 +18,11 @@ import Foundation
 
 // MARK: - 이진수 클래스
 
-let binary = Binary(with: 5)
-
-print(binary)
-print(binary.count)
-print(binary.find(by: 3))
+//let binary = Binary(with: 5)
+//
+//print(binary)
+//print(binary.count)
+//print(binary.find(by: 3))
 
 // MARK: - 거품 정렬 BubbleSort 클래스
 //
@@ -32,4 +32,23 @@ print(binary.find(by: 3))
 //print(bubbleSort.sorted(isAscending: false))
 
 
+// MARK: - 괄호쌍 맞추기 구조체
+
+var parenthesis = Parenthesis(type: .curly)
+print(parenthesis.generate(with: 4))
+
+parenthesis = Parenthesis(type: .square)
+print(parenthesis.generate(with: 8))
+
+let rightArray = parenthesis.generate(with: 6)
+for element in rightArray {
+    print(element, parenthesis.analyze(with:element))
+}
+
+print("----")
+
+let wrongArray = ["[[[[]]]]", "[[[][]]]", "[[[][]][", "[[[]]][]", "][[][[]]", "[[][][]]", "[[][]][]", "[[]][[]]", "[[]][][]", "[][[[]]]", "[][[][]]", "[][[]][]", "[][][[]]", "[][][][]"]
+for element in wrongArray {
+    print(element, parenthesis.analyze(with:element))
+}
 
