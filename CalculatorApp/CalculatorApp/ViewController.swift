@@ -10,8 +10,6 @@ import UIKit
 class ViewController: UIViewController {
     
     @IBOutlet weak var displayLabel: UILabel!
-
-    
     @IBOutlet var stacks: [UIButton]!
     @IBOutlet var opStacks: [UIButton]!
     
@@ -34,6 +32,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
+    
+    // MARK: - If user press blue button
     
     @IBAction func numPressed(_ sender: UIButton) {
         guard let numInput = sender.titleLabel?.text else {
@@ -64,6 +64,8 @@ class ViewController: UIViewController {
         }
         
     }
+    
+    // MARK: - If user press orange button
     
     @IBAction func operatorPressed(_ sender: UIButton) {
         guard let opInput = sender.titleLabel?.text else {
@@ -103,22 +105,8 @@ class ViewController: UIViewController {
         displayLabel.text = "0"
         isTypingNumber = false
     }
-
     
-    // MARK: - Handling Gesture
-    
-    override func becomeFirstResponder() -> Bool {
-        return true
-    }
-    
-    override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
-        if motion == .motionShake {
-            displayLabel.text = "0"
-            isTypingNumber = false
-            stackPointer = 0
-            resetStacks()
-        }
-    }
+    // MARK: - Manipulate stacks in View
     
     func updateStacks(isDone: Bool) {
         if isDone {
@@ -165,6 +153,21 @@ class ViewController: UIViewController {
         for opStack in opStacks {
             opStack.isEnabled = false
             opStack.setTitle("", for: .normal)
+        }
+    }
+    
+    // MARK: - Handling Gesture
+    
+    override func becomeFirstResponder() -> Bool {
+        return true
+    }
+    
+    override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
+        if motion == .motionShake {
+            displayLabel.text = "0"
+            isTypingNumber = false
+            stackPointer = 0
+            resetStacks()
         }
     }
     
