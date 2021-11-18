@@ -74,7 +74,7 @@ struct Parenthesis {
         var stack: [Character] = []
         
         for bracket in value {
-            if bracket == Character(type.left) {
+            if bracket == Character(type.leftBracket) {
                 stack.append(bracket)
             } else {
                 if stack.isEmpty {
