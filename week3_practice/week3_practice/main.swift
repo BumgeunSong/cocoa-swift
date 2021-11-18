@@ -40,6 +40,8 @@ print(parenthesis.generate(with: 4))
 parenthesis = Parenthesis(type: .square)
 print(parenthesis.generate(with: 8))
 
+print("----")
+
 let rightArray = parenthesis.generate(with: 6)
 for element in rightArray {
     print(element, parenthesis.analyze(with:element))

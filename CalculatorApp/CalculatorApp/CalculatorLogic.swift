@@ -22,6 +22,5 @@ struct CalculatorLogic {
         default:
             return nil
         }
-        
     }
 }
