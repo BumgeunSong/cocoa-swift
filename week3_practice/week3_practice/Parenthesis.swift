@@ -43,7 +43,7 @@ struct Parenthesis {
     func generate(with length: Int) -> Array<String> {
         
         if length % 2 != 0 {
-            print("Number of arenthesis should be even.")
+            print("Number of parenthesis should be even.")
             return []
         }
         
@@ -54,11 +54,13 @@ struct Parenthesis {
                 return
             }
 
+            // 규칙 1. 여는 괄호는 여는 괄호의 갯수가 전체 길이의 절반 이하일 때만 추가 가능
             if counter.leftBracket < (length / 2) {
                 let newcounter = (counter.leftBracket + 1, counter.rightBracket)
                 recursion(input: "\(input)\(type.leftBracket)", counter: newcounter)
             }
             
+            // 규칙 2. 닫는 괄호는 여는 괄호가 닫는 괄호보다 많을 때만 추가 가능
             if counter.rightBracket < counter.leftBracket {
                 let newcounter = (counter.leftBracket, counter.rightBracket + 1)
                 recursion(input: "\(input)\(type.rightBracket)", counter: newcounter)
