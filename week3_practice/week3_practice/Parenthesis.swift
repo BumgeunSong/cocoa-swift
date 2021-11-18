@@ -13,7 +13,7 @@ enum ParenthesisType {
     case square
     case curly
     
-    var left: String {
+    var leftBracket: String {
         switch self {
         case .round:
             return "("
@@ -24,7 +24,7 @@ enum ParenthesisType {
         }
     }
     
-    var right: String {
+    var rightBracket: String {
         switch self {
         case .round:
             return ")"
@@ -56,12 +56,12 @@ struct Parenthesis {
 
             if counter.leftBracket < (length / 2) {
                 let newcounter = (counter.leftBracket + 1, counter.rightBracket)
-                recursion(input: "\(input)\(type.left)", counter: newcounter)
+                recursion(input: "\(input)\(type.leftBracket)", counter: newcounter)
             }
             
             if counter.rightBracket < counter.leftBracket {
                 let newcounter = (counter.leftBracket, counter.rightBracket + 1)
-                recursion(input: "\(input)\(type.right)", counter: newcounter)
+                recursion(input: "\(input)\(type.rightBracket)", counter: newcounter)
             }
                           
             return
