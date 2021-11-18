@@ -40,32 +40,33 @@ struct Parenthesis {
     
     var type: ParenthesisType
     
-    func generate(with count: Int) -> Array<String> {
+    func generate(with length: Int) -> Array<String> {
         
-        if count % 2 != 0 {
+        if length % 2 != 0 {
             print("Number of arenthesis should be even.")
             return []
         }
         
         var result: Array<String> = []
-        func recursion(input: String, occurrence: (opener: Int, closer: Int)) {
-            if input.count >= count {
+        func recursion(input: String, counter: (leftBracket: Int, rightBracket: Int)) {
+            if input.count >= length {
                 result.append(input)
                 return
             }
 
-            if occurrence.opener < (count / 2) {
-                let newOccurrence = (occurrence.opener + 1, occurrence.closer)
-                recursion(input: "\(input)\(type.left)", occurrence: newOccurrence)
+            if counter.leftBracket < (length / 2) {
+                let newcounter = (counter.leftBracket + 1, counter.rightBracket)
+                recursion(input: "\(input)\(type.left)", counter: newcounter)
             }
             
-            if occurrence.closer < occurrence.opener {
-                let newOccurrence = (occurrence.opener, occurrence.closer + 1)
-                recursion(input: "\(input)\(type.right)", occurrence: newOccurrence)
+            if counter.rightBracket < counter.leftBracket {
+                let newcounter = (counter.leftBracket, counter.rightBracket + 1)
+                recursion(input: "\(input)\(type.right)", counter: newcounter)
             }
+                          
             return
         }
-        recursion(input: "", occurrence: (opener: 0, closer: 0))
+        recursion(input: "", counter: (leftBracket: 0, rightBracket: 0))
         return result
     }
     
