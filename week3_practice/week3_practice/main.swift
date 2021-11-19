@@ -38,19 +38,11 @@ var parenthesis = Parenthesis(type: .curly)
 print(parenthesis.generate(with: 4))
 
 parenthesis = Parenthesis(type: .square)
-print(parenthesis.generate(with: 8))
+print(parenthesis.generate(with: 6))
 
 print("----")
 
-let rightArray = parenthesis.generate(with: 6)
+let rightArray = parenthesis.generate(with: 4)
 for element in rightArray {
     print(element, parenthesis.analyze(with:element))
 }
-
-print("----")
-
-let wrongArray = ["[[[[]]]]", "[[[][]]]", "[[[][]][", "[[[]]][]", "][[][[]]", "[[][][]]", "[[][]][]", "[[]][[]]", "[[]][][]", "[][[[]]]", "[][[][]]", "[][[]][]", "[][][[]]", "[][][][]"]
-for element in wrongArray {
-    print(element, parenthesis.analyze(with:element))
-}
-
