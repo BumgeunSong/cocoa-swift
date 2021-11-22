@@ -15,7 +15,7 @@
 		BCF96191274B61CF00C05381 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCF9618F274B61CF00C05381 /* LaunchScreen.storyboard */; };
 		BCF96199274B63B300C05381 /* CurrentTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF96198274B63B300C05381 /* CurrentTime.swift */; };
 		BCF9619B274B7E5C00C05381 /* HangeulNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF9619A274B7E5C00C05381 /* HangeulNumber.swift */; };
-		BCF9619E274B875400C05381 /* screenshot.png in Resources */ = {isa = PBXBuildFile; fileRef = BCF9619D274B875400C05381 /* screenshot.png */; };
+		BCF961A0274B89EC00C05381 /* demo in Resources */ = {isa = PBXBuildFile; fileRef = BCF9619F274B89EC00C05381 /* demo */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,7 +30,7 @@
 		BCF96198274B63B300C05381 /* CurrentTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentTime.swift; sourceTree = "<group>"; };
 		BCF9619A274B7E5C00C05381 /* HangeulNumber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HangeulNumber.swift; sourceTree = "<group>"; };
 		BCF9619C274B871200C05381 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		BCF9619D274B875400C05381 /* screenshot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = screenshot.png; sourceTree = "<group>"; };
+		BCF9619F274B89EC00C05381 /* demo */ = {isa = PBXFileReference; lastKnownFileType = file; path = demo; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,8 +47,8 @@
 		BCF96178274B61CE00C05381 = {
 			isa = PBXGroup;
 			children = (
+				BCF9619F274B89EC00C05381 /* demo */,
 				BCF9619C274B871200C05381 /* README.md */,
-				BCF9619D274B875400C05381 /* screenshot.png */,
 				BCF96183274B61CE00C05381 /* HangeulClockApp */,
 				BCF96182274B61CE00C05381 /* Products */,
 			);
@@ -139,7 +139,7 @@
 				BCF96191274B61CF00C05381 /* LaunchScreen.storyboard in Resources */,
 				BCF9618E274B61CF00C05381 /* Assets.xcassets in Resources */,
 				BCF9618C274B61CE00C05381 /* Main.storyboard in Resources */,
-				BCF9619E274B875400C05381 /* screenshot.png in Resources */,
+				BCF961A0274B89EC00C05381 /* demo in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

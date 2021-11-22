@@ -8,7 +8,7 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
     @IBOutlet weak var isAMLabel1: UILabel!
     @IBOutlet weak var isAMLabel2: UILabel!
     
@@ -79,6 +79,12 @@ extension ViewController: CurrentTimeDelegate {
         for hourLabel in hourLabels {
             if hourLabel.tag == currentTime.hour % 10 {
                 hourLabel.textColor = UIColor.white
+                
+            }
+            
+            // 다'섯'을 추가하기 위한 예외 처리
+            if hourLabel.tag == 11 && (currentTime.hour == 5 || currentTime.hour == 6) {
+                hourLabel.textColor = UIColor.white
             }
         }
         
@@ -122,6 +128,6 @@ extension ViewController: CurrentTimeDelegate {
         
     }
 }
-    
-    
+
+
 

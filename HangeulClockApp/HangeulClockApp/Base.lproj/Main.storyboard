@@ -221,7 +221,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i0M-g4-a55">
                                                 <rect key="frame" x="311.5" y="0.0" width="102.5" height="90"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" tag="6" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="섯" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4iL-Y3-YiJ">
+                                                    <label opaque="NO" userInteractionEnabled="NO" tag="11" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="섯" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4iL-Y3-YiJ">
                                                         <rect key="frame" x="0.0" y="0.0" width="102.5" height="90"/>
                                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="60"/>
                                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

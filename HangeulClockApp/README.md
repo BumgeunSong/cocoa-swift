@@ -2,4 +2,4 @@
 
 ## 결과 화면
 
-![Screenshot](./screenshot.png)
+![Screenshot](./demo.png)
