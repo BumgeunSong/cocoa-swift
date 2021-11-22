@@ -15,7 +15,7 @@
 		BCF96191274B61CF00C05381 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCF9618F274B61CF00C05381 /* LaunchScreen.storyboard */; };
 		BCF96199274B63B300C05381 /* CurrentTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF96198274B63B300C05381 /* CurrentTime.swift */; };
 		BCF9619B274B7E5C00C05381 /* HangeulNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF9619A274B7E5C00C05381 /* HangeulNumber.swift */; };
-		BCF961A0274B89EC00C05381 /* demo in Resources */ = {isa = PBXBuildFile; fileRef = BCF9619F274B89EC00C05381 /* demo */; };
+		BCF961A2274B8A6F00C05381 /* demo.png in Resources */ = {isa = PBXBuildFile; fileRef = BCF961A1274B8A6F00C05381 /* demo.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,7 +30,7 @@
 		BCF96198274B63B300C05381 /* CurrentTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentTime.swift; sourceTree = "<group>"; };
 		BCF9619A274B7E5C00C05381 /* HangeulNumber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HangeulNumber.swift; sourceTree = "<group>"; };
 		BCF9619C274B871200C05381 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		BCF9619F274B89EC00C05381 /* demo */ = {isa = PBXFileReference; lastKnownFileType = file; path = demo; sourceTree = "<group>"; };
+		BCF961A1274B8A6F00C05381 /* demo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = demo.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,7 +47,7 @@
 		BCF96178274B61CE00C05381 = {
 			isa = PBXGroup;
 			children = (
-				BCF9619F274B89EC00C05381 /* demo */,
+				BCF961A1274B8A6F00C05381 /* demo.png */,
 				BCF9619C274B871200C05381 /* README.md */,
 				BCF96183274B61CE00C05381 /* HangeulClockApp */,
 				BCF96182274B61CE00C05381 /* Products */,
@@ -137,9 +137,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				BCF96191274B61CF00C05381 /* LaunchScreen.storyboard in Resources */,
+				BCF961A2274B8A6F00C05381 /* demo.png in Resources */,
 				BCF9618E274B61CF00C05381 /* Assets.xcassets in Resources */,
 				BCF9618C274B61CE00C05381 /* Main.storyboard in Resources */,
-				BCF961A0274B89EC00C05381 /* demo in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
