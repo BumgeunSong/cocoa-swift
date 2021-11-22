@@ -14,6 +14,7 @@
 		BCF9618E274B61CF00C05381 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCF9618D274B61CF00C05381 /* Assets.xcassets */; };
 		BCF96191274B61CF00C05381 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCF9618F274B61CF00C05381 /* LaunchScreen.storyboard */; };
 		BCF96199274B63B300C05381 /* CurrentTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF96198274B63B300C05381 /* CurrentTime.swift */; };
+		BCF9619B274B7E5C00C05381 /* HangeulNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF9619A274B7E5C00C05381 /* HangeulNumber.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		BCF96190274B61CF00C05381 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BCF96192274B61CF00C05381 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BCF96198274B63B300C05381 /* CurrentTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentTime.swift; sourceTree = "<group>"; };
+		BCF9619A274B7E5C00C05381 /* HangeulNumber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HangeulNumber.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 				BCF96184274B61CE00C05381 /* AppDelegate.swift */,
 				BCF96186274B61CE00C05381 /* SceneDelegate.swift */,
 				BCF96188274B61CE00C05381 /* ViewController.swift */,
+				BCF9619A274B7E5C00C05381 /* HangeulNumber.swift */,
 				BCF9618A274B61CE00C05381 /* Main.storyboard */,
 				BCF96198274B63B300C05381 /* CurrentTime.swift */,
 				BCF9618D274B61CF00C05381 /* Assets.xcassets */,
@@ -141,6 +144,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BCF9619B274B7E5C00C05381 /* HangeulNumber.swift in Sources */,
 				BCF96189274B61CE00C05381 /* ViewController.swift in Sources */,
 				BCF96185274B61CE00C05381 /* AppDelegate.swift in Sources */,
 				BCF96199274B63B300C05381 /* CurrentTime.swift in Sources */,
