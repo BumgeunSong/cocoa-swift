@@ -6,3 +6,32 @@
 //
 
 import Foundation
+
+let fm = FileManager.default
+
+func findFiles(at path: String) -> Array<String>? {
+    do {
+        let files = try fm.contentsOfDirectory(atPath: path)
+        return files
+    } catch {
+        print("Failed to read directory")
+        return nil
+    }
+}
+
+
+func isExist(filename: String, at path: String) -> Bool {
+    return true
+}
+
+func sort(in files: Array<String>) -> Array<String> {
+    return ["String"]
+}
+
+func areExist(filenames: Array<String>, at path: String) -> Array<Bool> {
+    return [true]
+}
+
+func isExist(filename: String, format: String, at path: String) -> Bool {
+    return true
+}

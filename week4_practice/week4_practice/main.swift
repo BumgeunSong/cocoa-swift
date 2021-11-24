@@ -7,6 +7,11 @@
 
 import Foundation
 
-print("Hello, World!")
+print("Let's get started")
 
+// MARK: - Test findFiles()
+
+if let files = findFiles(at: "/Users/bumgeunsong/Coding") {
+    print(files)
+}
 
