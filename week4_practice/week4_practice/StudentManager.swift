@@ -12,15 +12,15 @@ struct StudentManager {
     
     init?(CSVPath: String) {
         do {
-            CSVString = try String(contentsOf: URL(fileURLWithPath: CSVPath)).trimmingCharacters(in: .whitespacesAndNewlines)
-            self.students = parse(CSV: CSVString)
+            let CSVString = try String(contentsOf: URL(fileURLWithPath: CSVPath)).trimmingCharacters(in: .whitespacesAndNewlines)
+            self.students = parse(CSVString: CSVString)
         } catch {
             print(error.localizedDescription)
             return nil
         }
     }
     
-    func parse(CSV: String) -> Array<Dictionary<String, Any>> {
+    func parse(CSVString: String) -> Array<Dictionary<String, Any>> {
         var body = CSVString.components(separatedBy: "\n").map{ $0.components(separatedBy: ", ")}
         let header = body.removeFirst()
         
@@ -40,12 +40,9 @@ struct StudentManager {
         return parsedData
     }
     
-    func readCSV(text: String) {
-        
-    }
     
-    func add(name: String, email: String, language: String, grade: Int) {
-        
+    mutating func add(name: String, email: String, language: String, grade: Int) {
+        self.students?.append(["name": name, "email": email, "language": language, "grade": grade])
     }
     
     func findBy(name: String) -> Dictionary<String,Any> {
