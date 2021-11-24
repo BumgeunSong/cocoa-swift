@@ -15,3 +15,4 @@ if let files = findFiles(at: "/Users/bumgeunsong/Coding") {
     print(files)
 }
 
+print(isExist(filename: "cocoa-swift", at: "/Users/bumgeunsong/Coding"))

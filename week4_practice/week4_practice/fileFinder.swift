@@ -21,7 +21,16 @@ func findFiles(at path: String) -> Array<String>? {
 
 
 func isExist(filename: String, at path: String) -> Bool {
-    return true
+    if let files = findFiles(at: path) {
+        for file in files {
+            if file == filename {
+                print("Found \(file)")
+                return true
+            }
+        }
+    }
+    print("Failed to find \(filename)")
+    return false
 }
 
 func sort(in files: Array<String>) -> Array<String> {
