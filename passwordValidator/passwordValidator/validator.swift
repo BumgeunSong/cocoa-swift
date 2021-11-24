@@ -33,7 +33,7 @@ struct Validator {
     func getLevelColor(level: Int) -> UIColor? {
         switch level {
         case 1:
-            return UIColor.systemRed
+            return UIColor.systemRed 
         case 2:
             return UIColor.systemOrange
         case 3:
