@@ -45,8 +45,13 @@ struct StudentManager {
         self.students?.append(["name": name, "email": email, "language": language, "grade": grade])
     }
     
-    func findBy(name: String) -> Dictionary<String,Any> {
-        return ["Dummy": "Dummy"]
+    func findBy(name: String) -> Dictionary<String,Any>? {
+        guard let result = self.students?.first(where: { row in
+            guard let nameValue = row["name"] as? String else { return false }
+            return nameValue == name
+        }) else { return nil }
+        
+        return result
     }
     
     func removeBy(email: String) -> Bool {
