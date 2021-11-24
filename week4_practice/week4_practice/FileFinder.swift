@@ -46,7 +46,7 @@ struct FileFinder {
     func findFiles(fileExtension: String, at path: String) -> Array<String>? {
         do {
             return try fm.contentsOfDirectory(atPath: path)
-                .filter { $0.contains(".\(fileExtension)") }
+                .filter { $0.hasSuffix(".\(fileExtension)") }
         } catch {
             print("Failed to read directory")
             print(error.localizedDescription)

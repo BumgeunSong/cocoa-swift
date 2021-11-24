@@ -24,19 +24,28 @@ let finder = FileFinder()
 
 // MARK: - Test StudentManager
 
-var path = "/Users/bumgeunsong/Coding/cocoa-swift/week4_practice/week4_practice/example.csv"
+var CSVPath = "/Users/bumgeunsong/Coding/cocoa-swift/week4_practice/week4_practice/example.csv"
+//
+//if var studentManager = StudentManager(CSVPath: CSVPath) {
+//    studentManager.add(name: "Eddy", email: "code1195@gmail.com", language: "Swift", grade: 2)
+//
+//    print("Find Eddy")
+//    print(studentManager.findBy(name: "Eddy")!)
+//
+//    print("Current state")
+//    print(studentManager.students!)
+//
+//    print(studentManager.writeStudentData(as: "student-file"))
+//
+//}
 
-if var studentManager = StudentManager(CSVPath: path) {
-    studentManager.add(name: "Eddy", email: "code1195@gmail.com", language: "Swift", grade: 2)
+// MARK: - Test BookReader
 
-    print("Find Eddy")
-    print(studentManager.findBy(name: "Eddy")!)
+var bookPath = "/Users/bumgeunsong/Coding/cocoa-swift/week4_practice/week4_practice/bookfile.txt"
 
-    print("Current state")
-    print(studentManager.students!)
-
-    print(studentManager.writeStudentData(as: "student-file"))
-
+if let bookReader = BookReader(filePath: bookPath) {
+    bookReader.countAll()
+    RunLoop.current.run()
 }
 
-// MARK: - Test StudentManager
+
