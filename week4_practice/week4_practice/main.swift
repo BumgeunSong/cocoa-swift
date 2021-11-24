@@ -25,6 +25,20 @@ let finder = FileFinder()
 // MARK: - Test StudentManager
 
 var path = "/Users/bumgeunsong/Coding/cocoa-swift/week4_practice/week4_practice/example.csv"
-var studentManager = StudentManager(CSVPath: path)
-studentManager?.add(name: "Eddy", email: "code1195@gmail.com", language: "Swift", grade: 2)
-print(studentManager?.students)
+
+if var studentManager = StudentManager(CSVPath: path) {
+    studentManager.add(name: "Eddy", email: "code1195@gmail.com", language: "Swift", grade: 2)
+
+    print("Find Eddy")
+    print(studentManager.findBy(name: "Eddy")!)
+
+    print("Current state")
+    print(studentManager.students!)
+
+    print("Remove Eddy")
+    print(studentManager.removeBy(email: "code1195@gmail.com"))
+
+    print("Current state")
+    print(studentManager.students!)
+
+}

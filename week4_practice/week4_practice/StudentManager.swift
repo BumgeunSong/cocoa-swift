@@ -54,8 +54,19 @@ struct StudentManager {
         return result
     }
     
-    func removeBy(email: String) -> Bool {
-        return false
+    mutating func removeBy(email: String) -> Bool {
+        if let index = self.students?.firstIndex(where: { row in
+            guard let nameValue = row["email"] as? String else { return false }
+            return nameValue == email
+        }) {
+            print("Remove \(String(describing: self.students?[index]))")
+            self.students?.remove(at: index)
+            return true
+        } else {
+            print("Faild to find \(email)")
+            return false
+        }
+        
     }
     
     func writeCSV(to file: String) -> Bool {
