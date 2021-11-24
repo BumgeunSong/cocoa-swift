@@ -9,12 +9,15 @@ import Foundation
 
 print("Let's get started")
 
-// MARK: - Test findFiles()
+// MARK: - Test FileFinder
 
-if let files = findFiles(at: "/Users/bumgeunsong/Coding") {
+let finder = FileFinder()
+
+if let files = finder.findFiles(at: "/Users/bumgeunsong/Coding") {
     print(files)
-    print(sort(in: files))
+    print(finder.sort(in: files))
 }
 
-print(isExist(filename: "cocoa-swift", at: "/Users/bumgeunsong/Coding"))
-
+print(finder.isExist(filename: "cocoa-swift", at: "/Users/bumgeunsong/Coding"))
+print(finder.areExist(filenames: ["algorithm-practice", "iOS_study", "cocoa-swift", "card-game", "test.txt"], at: "/Users/bumgeunsong/Coding"))
+print(finder.findFiles(fileExtension: "md", at: "/Users/bumgeunsong/Coding/cocoa-swift")!)
