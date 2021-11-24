@@ -13,6 +13,8 @@ print("Let's get started")
 
 if let files = findFiles(at: "/Users/bumgeunsong/Coding") {
     print(files)
+    print(sort(in: files))
 }
 
 print(isExist(filename: "cocoa-swift", at: "/Users/bumgeunsong/Coding"))
+

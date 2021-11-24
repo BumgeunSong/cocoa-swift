@@ -34,7 +34,7 @@ func isExist(filename: String, at path: String) -> Bool {
 }
 
 func sort(in files: Array<String>) -> Array<String> {
-    return ["String"]
+    return files.sorted()
 }
 
 func areExist(filenames: Array<String>, at path: String) -> Array<Bool> {
