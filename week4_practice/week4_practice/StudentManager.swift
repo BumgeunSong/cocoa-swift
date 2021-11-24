@@ -8,15 +8,24 @@
 import Foundation
 
 struct StudentManager {
-    var urlText = "/Users/bumgeunsong/Coding/cocoa-swift/week4_practice/week4_practice"
-
-    var students: [Dictionary<String, Any>]
+    var students: Array<Dictionary<String, Any>>?
     
-    init(CSVString: String) {
+    init?(CSVPath: String) {
+        do {
+            CSVString = try String(contentsOf: URL(fileURLWithPath: CSVPath)).trimmingCharacters(in: .whitespacesAndNewlines)
+            self.students = parse(CSV: CSVString)
+        } catch {
+            print(error.localizedDescription)
+            return nil
+        }
+    }
+    
+    func parse(CSV: String) -> Array<Dictionary<String, Any>> {
         var body = CSVString.components(separatedBy: "\n").map{ $0.components(separatedBy: ", ")}
         let header = body.removeFirst()
+        print(body)
         
-        var student = [Dictionary<String, Any>]()
+        var parsedData = [Dictionary<String, Any>]()
         for rowIndex in 0..<body.count {
             var row: [String: Any] = [:]
             for colIndex in 0..<body[0].count {
@@ -26,10 +35,9 @@ struct StudentManager {
                     row[header[colIndex]] = body[rowIndex][colIndex]
                 }
             }
-            student.append(row)
+            parsedData.append(row)
         }
-        print(student)
-        self.students = student
+        return parsedData
     }
     
     func readCSV(text: String) {

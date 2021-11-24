@@ -27,9 +27,14 @@ let finder = FileFinder()
 //let files = finder.findFiles(fileExtension: "csv", at: "/Users/bumgeunsong/Coding/cocoa-swift/week4_practice")
 //)
 
-let CSVString = "name, email, language, grade\nJK, jk@codesquad.kr, swift, 5\nhead, head@codesquad.kr, JS, 3\nhonux, honux@codesquad.kr, SQL, 1\ncrong, crong@codesquad.kr, TS, 2"
+var CSVString = "name, email, language, grade\nJK, jk@codesquad.kr, swift, 5\nhead, head@codesquad.kr, JS, 3\nhonux, honux@codesquad.kr, SQL, 1\ncrong, crong@codesquad.kr, TS, 2"
 
-let studentManager = StudentManager(CSVString: CSVString)
+
+var path = "/Users/bumgeunsong/Coding/cocoa-swift/week4_practice/week4_practice/example.csv"
+
+print(CSVString)
+
+let studentManager = StudentManager(CSVPath: path)
 
 
 
