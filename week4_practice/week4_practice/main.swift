@@ -12,7 +12,7 @@ print("Let's get started")
 // MARK: - Test FileFinder
 
 let finder = FileFinder()
-//
+
 //if let files = finder.findFiles(at: "/Users/bumgeunsong/Coding") {
 //    print(files)
 //    print(finder.sort(in: files))
@@ -38,3 +38,5 @@ if var studentManager = StudentManager(CSVPath: path) {
     print(studentManager.writeStudentData(as: "student-file"))
 
 }
+
+// MARK: - Test StudentManager
