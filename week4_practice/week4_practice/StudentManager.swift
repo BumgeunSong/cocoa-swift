@@ -23,9 +23,9 @@ struct StudentManager {
     func parse(CSV: String) -> Array<Dictionary<String, Any>> {
         var body = CSVString.components(separatedBy: "\n").map{ $0.components(separatedBy: ", ")}
         let header = body.removeFirst()
-        print(body)
         
         var parsedData = [Dictionary<String, Any>]()
+        
         for rowIndex in 0..<body.count {
             var row: [String: Any] = [:]
             for colIndex in 0..<body[0].count {

@@ -24,17 +24,5 @@ let finder = FileFinder()
 
 // MARK: - Test StudentManager
 
-//let files = finder.findFiles(fileExtension: "csv", at: "/Users/bumgeunsong/Coding/cocoa-swift/week4_practice")
-//)
-
-var CSVString = "name, email, language, grade\nJK, jk@codesquad.kr, swift, 5\nhead, head@codesquad.kr, JS, 3\nhonux, honux@codesquad.kr, SQL, 1\ncrong, crong@codesquad.kr, TS, 2"
-
-
 var path = "/Users/bumgeunsong/Coding/cocoa-swift/week4_practice/week4_practice/example.csv"
-
-print(CSVString)
-
 let studentManager = StudentManager(CSVPath: path)
-
-
-
