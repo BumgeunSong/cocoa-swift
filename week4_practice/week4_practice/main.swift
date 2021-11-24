@@ -13,18 +13,18 @@ print("Let's get started")
 
 let finder = FileFinder()
 
-//if let files = finder.findFiles(at: "/Users/bumgeunsong/Coding") {
+//if let files = finder.findFiles(at: "/Users/bumgeunsong/coding") {
 //    print(files)
 //    print(finder.sort(in: files))
 //}
 //
-//print(finder.isExist(filename: "cocoa-swift", at: "/Users/bumgeunsong/Coding"))
-//print(finder.areExist(filenames: ["algorithm-practice", "iOS_study", "cocoa-swift", "card-game", "test.txt"], at: "/Users/bumgeunsong/Coding"))
-//print(finder.findFiles(fileExtension: "md", at: "/Users/bumgeunsong/Coding/cocoa-swift")!)
+//print(finder.isExist(filename: "cocoa-swift", at: "/Users/bumgeunsong/coding"))
+//print(finder.areExist(filenames: ["algorithm-practice", "iOS_study", "cocoa-swift", "card-game", "test.txt"], at: "/Users/bumgeunsong/coding"))
+//print(finder.findFiles(fileExtension: "md", at: "/Users/bumgeunsong/coding/cocoa-swift")!)
 
 // MARK: - Test StudentManager
 
-var CSVPath = "/Users/bumgeunsong/Coding/cocoa-swift/week4_practice/week4_practice/example.csv"
+//var CSVPath = "/Users/bumgeunsong/coding/cocoa-swift/week4_practice/week4_practice/example.csv"
 //
 //if var studentManager = StudentManager(CSVPath: CSVPath) {
 //    studentManager.add(name: "Eddy", email: "code1195@gmail.com", language: "Swift", grade: 2)
@@ -41,7 +41,7 @@ var CSVPath = "/Users/bumgeunsong/Coding/cocoa-swift/week4_practice/week4_practi
 
 // MARK: - Test BookReader
 
-var bookPath = "/Users/bumgeunsong/Coding/cocoa-swift/week4_practice/week4_practice/bookfile.txt"
+var bookPath = "/Users/bumgeunsong/coding/cocoa-swift/week4_practice/week4_practice/bookfile.txt"
 
 if let bookReader = BookReader(filePath: bookPath) {
     bookReader.countAll()

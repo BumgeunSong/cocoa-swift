@@ -10,6 +10,7 @@
 		BCF04270274DD26700627C73 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF0426F274DD26700627C73 /* main.swift */; };
 		BCF04277274DD2EE00627C73 /* FileFinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF04276274DD2EE00627C73 /* FileFinder.swift */; };
 		BCF04279274DE24800627C73 /* StudentManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF04278274DE24800627C73 /* StudentManager.swift */; };
+		BCF0427C274E220300627C73 /* BookReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF0427B274E220300627C73 /* BookReader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -30,6 +31,8 @@
 		BCF04276274DD2EE00627C73 /* FileFinder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileFinder.swift; sourceTree = "<group>"; };
 		BCF04278274DE24800627C73 /* StudentManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentManager.swift; sourceTree = "<group>"; };
 		BCF0427A274E00FC00627C73 /* example.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = example.csv; sourceTree = "<group>"; };
+		BCF0427B274E220300627C73 /* BookReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookReader.swift; sourceTree = "<group>"; };
+		BCF0427D274E22F600627C73 /* bookfile.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = bookfile.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,8 +65,10 @@
 		BCF0426E274DD26700627C73 /* week4_practice */ = {
 			isa = PBXGroup;
 			children = (
+				BCF0427D274E22F600627C73 /* bookfile.txt */,
 				BCF0427A274E00FC00627C73 /* example.csv */,
 				BCF0426F274DD26700627C73 /* main.swift */,
+				BCF0427B274E220300627C73 /* BookReader.swift */,
 				BCF04278274DE24800627C73 /* StudentManager.swift */,
 				BCF04276274DD2EE00627C73 /* FileFinder.swift */,
 			);
@@ -129,6 +134,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BCF04270274DD26700627C73 /* main.swift in Sources */,
+				BCF0427C274E220300627C73 /* BookReader.swift in Sources */,
 				BCF04277274DD2EE00627C73 /* FileFinder.swift in Sources */,
 				BCF04279274DE24800627C73 /* StudentManager.swift in Sources */,
 			);
