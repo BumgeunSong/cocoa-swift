@@ -20,6 +20,7 @@ struct StudentManager {
         }
     }
     
+    // MARK: - Parse CSV format String to Array of Dictionary
     func parse(CSVString: String) -> Array<Dictionary<String, Any>> {
         var body = CSVString.components(separatedBy: "\n").map{ $0.components(separatedBy: ", ")}
         let header = body.removeFirst()
@@ -39,7 +40,6 @@ struct StudentManager {
         }
         return parsedData
     }
-    
     
     mutating func add(name: String, email: String, language: String, grade: Int) {
         self.students?.append(["name": name, "email": email, "language": language, "grade": grade])
@@ -69,7 +69,50 @@ struct StudentManager {
         
     }
     
-    func writeCSV(to file: String) -> Bool {
+    func writeStudentData(as file: String) -> Bool {
+        if let CSVString = parse(array: self.students!) {
+            let pathToWrite = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+            let filePathToWrite = pathToWrite.appendingPathComponent("\(file).csv")
+            
+            do {
+                try CSVString.write(to: filePathToWrite, atomically: true, encoding: String.Encoding.utf8)
+                return true
+            } catch {
+                print(error.localizedDescription)
+            }
+        }
         return false
+    }
+    
+    // MARK: - Parse Array of Dictionary to CSV format String
+    func parse(array: Array<Dictionary<String, Any>>) -> String? {
+        var CSVString = ""
+        if let students = self.students {
+            var header: [String] = []
+            
+            for (key, _) in students[0] {
+                header.append(key)
+            }
+            CSVString += header.joined(separator: ",") + "\n"
+            
+            var body: [String] = []
+            for row in students {
+                
+                var rowArray: [String] = []
+                for headerField in header {
+                    if let bodyValue = row[headerField] as? String {
+                        rowArray.append(bodyValue)
+                    } else {
+                        let grade = row[headerField] as? Int
+                        rowArray.append(String(grade!))
+                    }
+                }
+                body.append(rowArray.joined(separator: ","))
+            }
+            
+            CSVString += body.joined(separator: "\n")
+        }
+        print(CSVString)
+        return CSVString
     }
 }

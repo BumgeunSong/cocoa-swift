@@ -35,10 +35,6 @@ if var studentManager = StudentManager(CSVPath: path) {
     print("Current state")
     print(studentManager.students!)
 
-    print("Remove Eddy")
-    print(studentManager.removeBy(email: "code1195@gmail.com"))
-
-    print("Current state")
-    print(studentManager.students!)
+    print(studentManager.writeStudentData(as: "student-file"))
 
 }
