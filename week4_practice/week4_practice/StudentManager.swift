@@ -8,11 +8,28 @@
 import Foundation
 
 struct StudentManager {
-    
+    var urlText = "/Users/bumgeunsong/Coding/cocoa-swift/week4_practice/week4_practice"
+
     var students: [Dictionary<String, Any>]
     
-    init(CSV: String) {
-        self.students = [["Dummy": "Dummy"]]
+    init(CSVString: String) {
+        var body = CSVString.components(separatedBy: "\n").map{ $0.components(separatedBy: ", ")}
+        let header = body.removeFirst()
+        
+        var student = [Dictionary<String, Any>]()
+        for rowIndex in 0..<body.count {
+            var row: [String: Any] = [:]
+            for colIndex in 0..<body[0].count {
+                if let grade = Int(body[rowIndex][colIndex]) {
+                    row[header[colIndex]] = grade
+                } else {
+                    row[header[colIndex]] = body[rowIndex][colIndex]
+                }
+            }
+            student.append(row)
+        }
+        print(student)
+        self.students = student
     }
     
     func readCSV(text: String) {
