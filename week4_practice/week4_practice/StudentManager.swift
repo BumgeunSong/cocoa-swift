@@ -12,7 +12,9 @@ struct StudentManager {
     
     init?(CSVPath: String) {
         do {
+            
             let CSVString = try String(contentsOf: URL(fileURLWithPath: CSVPath)).trimmingCharacters(in: .whitespacesAndNewlines)
+            print(CSVString)
             self.students = parse(CSVString: CSVString)
         } catch {
             print(error.localizedDescription)

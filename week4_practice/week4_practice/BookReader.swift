@@ -14,7 +14,7 @@ class BookReader {
                    "욕망", "생활", "자원", "사람", "노동",
                    "인물", "소비", "사회", "이론", "새로운"]
     
-    var bookString: String = ""
+    var bookString: String = "" // 매우 긴 스트링
     var thread: Thread? = nil
     
     init?(filePath: String) {
@@ -48,6 +48,8 @@ class BookReader {
     @objc func count(word: String) {
         autoreleasepool { () in
             print("\(word): \(bookString.components(separatedBy: word).count - 1)번 등장")
+            print(Thread.current)
+            print(Thread.current.isMainThread)
             print("Other thread is running...")
         }
     }
