@@ -7,38 +7,16 @@
 
 import Foundation
 
-enum DeckOption: String {
-    case test = "test"
-    case create = "new"
-    case open = "open"
-    case update = "change"
-    case delete = "remove"
-    case quit = "q"
-    case unknown
-    
-    init(value: String) {
-        switch value {
-        case "test": self = .test
-        case "new": self = .create
-        case "change": self = .update
-        case "remove": self = .delete
-        case "open": self = .open
-        case "q": self = .quit
-        default: self = .unknown
-        }
-    }
-}
 
 struct DeckManager {
     
     var decks: [Deck]? = Dummy().decks
     
-    
-    func getDeckOption(_ value: String) -> (option: DeckOption, value: String) {
-        return (DeckOption(value: value), value)
+    func getDeckCommand(_ value: String) -> (option: DeckCommand, value: String) {
+        return (DeckCommand(value: value), value)
     }
     
-    func showDecks() -> [Deck]? {
+    func showDecksAll() -> [Deck]? {
         if let decks = decks {
             return decks
         } else {
@@ -55,7 +33,6 @@ struct DeckManager {
         }
         
     }
-    
     
     func openDecks(name: String) -> Deck? {
         guard let decks = decks else {

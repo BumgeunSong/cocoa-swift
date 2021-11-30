@@ -7,23 +7,7 @@
 
 import Foundation
 
-enum CardOption: String {
-    case create = "new"
-    case update = "change"
-    case delete = "remove"
-    case quit = "q"
-    case unknown
-    
-    init(value: String) {
-        switch value {
-        case "new": self = .create
-        case "change": self = .update
-        case "remove": self = .delete
-        case "q": self = .quit
-        default: self = .unknown
-        }
-    }
-}
+
 
 
 class Deck {
@@ -35,30 +19,8 @@ class Deck {
     var cards: [Card]?
     var name: String
     
-    func arrangeCardIntoBox (result: [UUID:DifficultyOption]) {
-        for (key, value) in result {
-            guard let card = cards?.first(where: { $0.id == key }) else {
-                return
-            }
-            switch value {
-            case .easy:
-                card.refreshTime()
-                card.moveToNextBox()
-            case .medium:
-                card.refreshTime()
-                card.moveToPrevBox()
-            case .hard:
-                card.refreshTime()
-                card.moveToInitalBox()
-            default:
-                continue
-            }
-        }
-    }
-    
-    
-    func getCardOption(_ option: String) -> (option: CardOption, value: String) {
-        return (CardOption(value: option), option)
+    func getCardCommand(_ command: String) -> (option: CardCommand, value: String) {
+        return (CardCommand(value: command), command)
     }
     
     func showCards() -> [Card]? {
@@ -99,5 +61,26 @@ class Deck {
     func getDueCards() -> [Card]? {
         guard let cards = cards else { return nil }
         return cards.filter { $0.isDue() }
+    }
+    
+    func arrangeCardIntoBox (result: [UUID:DifficultyOption]) {
+        for (key, value) in result {
+            guard let card = cards?.first(where: { $0.id == key }) else {
+                return
+            }
+            switch value {
+            case .easy:
+                card.refreshTime()
+                card.moveToNextBox()
+            case .medium:
+                card.refreshTime()
+                card.moveToPrevBox()
+            case .hard:
+                card.refreshTime()
+                card.moveToInitalBox()
+            default:
+                continue
+            }
+        }
     }
 }

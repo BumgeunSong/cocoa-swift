@@ -7,5 +7,5 @@
 
 import Foundation
 
-var sprep = SprepView()
+var sprep = DeckView()
 sprep.enterDeckView()

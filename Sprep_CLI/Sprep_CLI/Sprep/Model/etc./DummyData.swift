@@ -15,7 +15,6 @@ class Dummy {
     
 }
 
-
 class DummyCards {
 
     var card1 = Card(id: UUID(),front: "라운드 로빈(Round-Robin) CPU 스케줄링은 무엇인가?", back: "먼저 온 프로세스부터 처리하되, '제한 시간'을 두고 자원을 뺏는다.\n장점: 특정 프로세스의 자원 독점을 방지한다.\n단점: 컨텍스트 스위칭 비용이 많이 든다.", lastTestTime: Date.init(timeIntervalSinceNow: Double.random(in: (-300000)..<(-86400))))

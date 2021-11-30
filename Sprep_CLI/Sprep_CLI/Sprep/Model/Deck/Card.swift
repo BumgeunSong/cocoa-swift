@@ -7,9 +7,6 @@
 
 import Foundation
 
-
-
-
 class Card {
     internal init(id: UUID, box: Box = .rightNow, front: String, back: String, lastTestTime: Date) {
         self.id = id

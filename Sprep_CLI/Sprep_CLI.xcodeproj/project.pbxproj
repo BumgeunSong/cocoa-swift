@@ -15,10 +15,12 @@
 		BC9B89A02754A208000B3828 /* Deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9B899F2754A208000B3828 /* Deck.swift */; };
 		BC9B89A22754A77E000B3828 /* Difficulty.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9B89A12754A77E000B3828 /* Difficulty.swift */; };
 		BC9B89A42754B03F000B3828 /* ConsoleIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9B89A32754B03F000B3828 /* ConsoleIO.swift */; };
-		BC9B89A62754B1CD000B3828 /* Panagram.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9B89A52754B1CD000B3828 /* Panagram.swift */; };
-		BC9B89AC2754B992000B3828 /* Sprep.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9B89AB2754B992000B3828 /* Sprep.swift */; };
-		BC9B89AE2754C516000B3828 /* Dummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9B89AD2754C516000B3828 /* Dummy.swift */; };
+		BC9B89AC2754B992000B3828 /* SprepView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9B89AB2754B992000B3828 /* SprepView.swift */; };
+		BC9B89AE2754C516000B3828 /* DummyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9B89AD2754C516000B3828 /* DummyData.swift */; };
 		BC9D6C802755FD7700518A10 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9D6C7F2755FD7700518A10 /* TestView.swift */; };
+		BC9D6C8427561F1100518A10 /* CardCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9D6C8327561F1100518A10 /* CardCommand.swift */; };
+		BC9D6C8627561F2100518A10 /* DeckCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9D6C8527561F2100518A10 /* DeckCommand.swift */; };
+		BC9D6C8C2756218600518A10 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9D6C8B2756218600518A10 /* CardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -43,10 +45,12 @@
 		BC9B899F2754A208000B3828 /* Deck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deck.swift; sourceTree = "<group>"; };
 		BC9B89A12754A77E000B3828 /* Difficulty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Difficulty.swift; sourceTree = "<group>"; };
 		BC9B89A32754B03F000B3828 /* ConsoleIO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsoleIO.swift; sourceTree = "<group>"; };
-		BC9B89A52754B1CD000B3828 /* Panagram.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Panagram.swift; sourceTree = "<group>"; };
-		BC9B89AB2754B992000B3828 /* Sprep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sprep.swift; sourceTree = "<group>"; };
-		BC9B89AD2754C516000B3828 /* Dummy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dummy.swift; sourceTree = "<group>"; };
+		BC9B89AB2754B992000B3828 /* SprepView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SprepView.swift; sourceTree = "<group>"; };
+		BC9B89AD2754C516000B3828 /* DummyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyData.swift; sourceTree = "<group>"; };
 		BC9D6C7F2755FD7700518A10 /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
+		BC9D6C8327561F1100518A10 /* CardCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCommand.swift; sourceTree = "<group>"; };
+		BC9D6C8527561F2100518A10 /* DeckCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckCommand.swift; sourceTree = "<group>"; };
+		BC9D6C8B2756218600518A10 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,34 +85,76 @@
 			children = (
 				BC9B898C27549F33000B3828 /* main.swift */,
 				BC9B89A82754B1EA000B3828 /* Sprep */,
-				BC9B89A72754B1D8000B3828 /* Conosle_practice */,
 			);
 			path = Sprep_CLI;
-			sourceTree = "<group>";
-		};
-		BC9B89A72754B1D8000B3828 /* Conosle_practice */ = {
-			isa = PBXGroup;
-			children = (
-				BC9B89A32754B03F000B3828 /* ConsoleIO.swift */,
-				BC9B89A52754B1CD000B3828 /* Panagram.swift */,
-			);
-			path = Conosle_practice;
 			sourceTree = "<group>";
 		};
 		BC9B89A82754B1EA000B3828 /* Sprep */ = {
 			isa = PBXGroup;
 			children = (
-				BC9B89AB2754B992000B3828 /* Sprep.swift */,
+				BC9D6C8227561E2400518A10 /* View */,
+				BC9D6C8127561E1D00518A10 /* Model */,
+			);
+			path = Sprep;
+			sourceTree = "<group>";
+		};
+		BC9D6C8127561E1D00518A10 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BC9D6C8727561FD900518A10 /* DeckManager */,
+				BC9D6C892756205100518A10 /* Tester */,
+				BC9D6C882756200000518A10 /* Deck */,
+				BC9D6C8A2756206400518A10 /* etc. */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BC9D6C8227561E2400518A10 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BC9B89AB2754B992000B3828 /* SprepView.swift */,
+				BC9D6C8B2756218600518A10 /* CardView.swift */,
 				BC9D6C7F2755FD7700518A10 /* TestView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BC9D6C8727561FD900518A10 /* DeckManager */ = {
+			isa = PBXGroup;
+			children = (
 				BC9B899327549F5D000B3828 /* DeckManager.swift */,
-				BC9B89AD2754C516000B3828 /* Dummy.swift */,
+				BC9D6C8527561F2100518A10 /* DeckCommand.swift */,
+			);
+			path = DeckManager;
+			sourceTree = "<group>";
+		};
+		BC9D6C882756200000518A10 /* Deck */ = {
+			isa = PBXGroup;
+			children = (
 				BC9B899F2754A208000B3828 /* Deck.swift */,
-				BC9B899527549F62000B3828 /* Tester.swift */,
-				BC9B89A12754A77E000B3828 /* Difficulty.swift */,
+				BC9D6C8327561F1100518A10 /* CardCommand.swift */,
 				BC9B899927549F75000B3828 /* Card.swift */,
 				BC9B899B27549F7C000B3828 /* Box.swift */,
 			);
-			path = Sprep;
+			path = Deck;
+			sourceTree = "<group>";
+		};
+		BC9D6C892756205100518A10 /* Tester */ = {
+			isa = PBXGroup;
+			children = (
+				BC9B899527549F62000B3828 /* Tester.swift */,
+				BC9B89A12754A77E000B3828 /* Difficulty.swift */,
+			);
+			path = Tester;
+			sourceTree = "<group>";
+		};
+		BC9D6C8A2756206400518A10 /* etc. */ = {
+			isa = PBXGroup;
+			children = (
+				BC9B89A32754B03F000B3828 /* ConsoleIO.swift */,
+				BC9B89AD2754C516000B3828 /* DummyData.swift */,
+			);
+			path = etc.;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -169,14 +215,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC9D6C8C2756218600518A10 /* CardView.swift in Sources */,
 				BC9D6C802755FD7700518A10 /* TestView.swift in Sources */,
 				BC9B899427549F5D000B3828 /* DeckManager.swift in Sources */,
 				BC9B899A27549F75000B3828 /* Card.swift in Sources */,
-				BC9B89AE2754C516000B3828 /* Dummy.swift in Sources */,
-				BC9B89A62754B1CD000B3828 /* Panagram.swift in Sources */,
+				BC9D6C8627561F2100518A10 /* DeckCommand.swift in Sources */,
+				BC9B89AE2754C516000B3828 /* DummyData.swift in Sources */,
 				BC9B89A22754A77E000B3828 /* Difficulty.swift in Sources */,
+				BC9D6C8427561F1100518A10 /* CardCommand.swift in Sources */,
 				BC9B89A02754A208000B3828 /* Deck.swift in Sources */,
-				BC9B89AC2754B992000B3828 /* Sprep.swift in Sources */,
+				BC9B89AC2754B992000B3828 /* SprepView.swift in Sources */,
 				BC9B899C27549F7C000B3828 /* Box.swift in Sources */,
 				BC9B89A42754B03F000B3828 /* ConsoleIO.swift in Sources */,
 				BC9B899627549F62000B3828 /* Tester.swift in Sources */,
