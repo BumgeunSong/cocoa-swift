@@ -7,6 +7,10 @@
 
 import Foundation
 
-protocol Box {
-    
+enum Box: TimeInterval {
+    case rightNow = 0
+    case afterDay = 86400
+    case afterWeek = 604800
+    case afterMonth = 2592000
+    case archive
 }

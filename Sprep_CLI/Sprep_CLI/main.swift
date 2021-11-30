@@ -7,7 +7,5 @@
 
 import Foundation
 
-print("Hello, World!")
-
-var sprep = Sprep()
-sprep.enterDeckMenu()
+var sprep = SprepView()
+sprep.enterDeckView()

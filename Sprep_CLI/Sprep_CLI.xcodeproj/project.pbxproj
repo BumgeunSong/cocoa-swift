@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		BC9B898D27549F33000B3828 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9B898C27549F33000B3828 /* main.swift */; };
 		BC9B899427549F5D000B3828 /* DeckManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9B899327549F5D000B3828 /* DeckManager.swift */; };
-		BC9B899627549F62000B3828 /* TestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9B899527549F62000B3828 /* TestManager.swift */; };
+		BC9B899627549F62000B3828 /* Tester.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9B899527549F62000B3828 /* Tester.swift */; };
 		BC9B899A27549F75000B3828 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9B899927549F75000B3828 /* Card.swift */; };
 		BC9B899C27549F7C000B3828 /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9B899B27549F7C000B3828 /* Box.swift */; };
 		BC9B89A02754A208000B3828 /* Deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9B899F2754A208000B3828 /* Deck.swift */; };
@@ -18,6 +18,7 @@
 		BC9B89A62754B1CD000B3828 /* Panagram.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9B89A52754B1CD000B3828 /* Panagram.swift */; };
 		BC9B89AC2754B992000B3828 /* Sprep.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9B89AB2754B992000B3828 /* Sprep.swift */; };
 		BC9B89AE2754C516000B3828 /* Dummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9B89AD2754C516000B3828 /* Dummy.swift */; };
+		BC9D6C802755FD7700518A10 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9D6C7F2755FD7700518A10 /* TestView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -36,7 +37,7 @@
 		BC9B898927549F33000B3828 /* Sprep_CLI */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Sprep_CLI; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC9B898C27549F33000B3828 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		BC9B899327549F5D000B3828 /* DeckManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckManager.swift; sourceTree = "<group>"; };
-		BC9B899527549F62000B3828 /* TestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestManager.swift; sourceTree = "<group>"; };
+		BC9B899527549F62000B3828 /* Tester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tester.swift; sourceTree = "<group>"; };
 		BC9B899927549F75000B3828 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		BC9B899B27549F7C000B3828 /* Box.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Box.swift; sourceTree = "<group>"; };
 		BC9B899F2754A208000B3828 /* Deck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deck.swift; sourceTree = "<group>"; };
@@ -45,6 +46,7 @@
 		BC9B89A52754B1CD000B3828 /* Panagram.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Panagram.swift; sourceTree = "<group>"; };
 		BC9B89AB2754B992000B3828 /* Sprep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sprep.swift; sourceTree = "<group>"; };
 		BC9B89AD2754C516000B3828 /* Dummy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dummy.swift; sourceTree = "<group>"; };
+		BC9D6C7F2755FD7700518A10 /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,10 +99,11 @@
 			isa = PBXGroup;
 			children = (
 				BC9B89AB2754B992000B3828 /* Sprep.swift */,
+				BC9D6C7F2755FD7700518A10 /* TestView.swift */,
 				BC9B899327549F5D000B3828 /* DeckManager.swift */,
 				BC9B89AD2754C516000B3828 /* Dummy.swift */,
 				BC9B899F2754A208000B3828 /* Deck.swift */,
-				BC9B899527549F62000B3828 /* TestManager.swift */,
+				BC9B899527549F62000B3828 /* Tester.swift */,
 				BC9B89A12754A77E000B3828 /* Difficulty.swift */,
 				BC9B899927549F75000B3828 /* Card.swift */,
 				BC9B899B27549F7C000B3828 /* Box.swift */,
@@ -166,6 +169,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC9D6C802755FD7700518A10 /* TestView.swift in Sources */,
 				BC9B899427549F5D000B3828 /* DeckManager.swift in Sources */,
 				BC9B899A27549F75000B3828 /* Card.swift in Sources */,
 				BC9B89AE2754C516000B3828 /* Dummy.swift in Sources */,
@@ -175,7 +179,7 @@
 				BC9B89AC2754B992000B3828 /* Sprep.swift in Sources */,
 				BC9B899C27549F7C000B3828 /* Box.swift in Sources */,
 				BC9B89A42754B03F000B3828 /* ConsoleIO.swift in Sources */,
-				BC9B899627549F62000B3828 /* TestManager.swift in Sources */,
+				BC9B899627549F62000B3828 /* Tester.swift in Sources */,
 				BC9B898D27549F33000B3828 /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

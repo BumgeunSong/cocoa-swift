@@ -8,8 +8,8 @@
 import Foundation
 
 enum DeckOption: String {
+    case test = "test"
     case create = "new"
-    case read = "show"
     case open = "open"
     case update = "change"
     case delete = "remove"
@@ -18,6 +18,7 @@ enum DeckOption: String {
     
     init(value: String) {
         switch value {
+        case "test": self = .test
         case "new": self = .create
         case "change": self = .update
         case "remove": self = .delete
@@ -30,20 +31,29 @@ enum DeckOption: String {
 
 struct DeckManager {
     
-    var decks: [Deck]? = Dummy.decks
+    var decks: [Deck]? = Dummy().decks
     
-    let instruction: String = "-----Deck 명령어-----\nnew: 새로운 덱 만들기\nopen: 덱 열기\nchange: 덱 이름 바꾸기\nremove: 덱 이름 바꾸기\nq: 프로그램 종료하기"
     
-    func getDeckOption(_ option: String) -> (option: DeckOption, value: String) {
-        return (DeckOption(value: option), option)
+    func getDeckOption(_ value: String) -> (option: DeckOption, value: String) {
+        return (DeckOption(value: value), value)
     }
     
-    func showDecks() -> String {
+    func showDecks() -> [Deck]? {
         if let decks = decks {
-            return decks.map { $0.name }.joined(separator: "\n")
+            return decks
         } else {
-            return "아직 덱이 없습니다. 덱을 만들어주세요."
+            return nil
         }
+    }
+    
+    func showDeck(name: String) -> Deck? {
+        if let deck = decks?.first(where: { $0.name == name
+        }) {
+            return deck
+        } else {
+            return nil
+        }
+        
     }
     
     
@@ -67,7 +77,7 @@ struct DeckManager {
     }
     
     func updateDeck(name: String, newName: String) {
-        if var deck = decks?.first(where: { $0.name == name }) {
+        if let deck = decks?.first(where: { $0.name == name }) {
             deck.name = newName
         }
     }

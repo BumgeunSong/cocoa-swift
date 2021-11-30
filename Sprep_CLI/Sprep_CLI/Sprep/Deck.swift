@@ -25,54 +25,79 @@ enum CardOption: String {
     }
 }
 
-struct Deck {
+
+class Deck {
+    init(cards: [Card]? = nil, name: String) {
+        self.cards = cards
+        self.name = name
+    }
+    
     var cards: [Card]?
     var name: String
     
-    let instruction: String = "-----Card 명령어-----\nnew: 새로운 카드 만들기\nchange: 카드 내용 바꾸기\nremove: 카드 삭제하기\nq: 뒤로 돌아가기"
+    func arrangeCardIntoBox (result: [UUID:DifficultyOption]) {
+        for (key, value) in result {
+            guard let card = cards?.first(where: { $0.id == key }) else {
+                return
+            }
+            switch value {
+            case .easy:
+                card.refreshTime()
+                card.moveToNextBox()
+            case .medium:
+                card.refreshTime()
+                card.moveToPrevBox()
+            case .hard:
+                card.refreshTime()
+                card.moveToInitalBox()
+            default:
+                continue
+            }
+        }
+    }
+    
     
     func getCardOption(_ option: String) -> (option: CardOption, value: String) {
         return (CardOption(value: option), option)
     }
     
-    func showCards() -> String {
+    func showCards() -> [Card]? {
         if let cards = cards {
-            return cards.map({ "ID: \($0.id)\n\($0.front)" })
-                .joined(separator: "\n")
+            return cards
         } else {
-            return "아직 카드가 없습니다. 카드를 만들어주세요."
+            return nil
         }
     }
     
-    func showCard(id: String) -> String {
-        if let cards = cards {
-            return cards.map({ "ID: \($0.id)\n\($0.front)" })
-                .joined(separator: "\n")
+    func showCard(id: String) -> Card? {
+        if let card = cards?.first(where: { $0.id.uuidString == id }) {
+            return card
         } else {
-            return "아직 카드가 없습니다. 카드를 만들어주세요."
+            return nil
         }
     }
     
-    func hasCard(id: String) -> Bool {
-        return ((cards?.contains(where: { $0.id.uuidString == id
-        })) != nil)
-    }
     
-    mutating func createCard(front: String, back: String) {
-        let newCard = Card(front: front, back: back, lastTestTime: Date())
+    func createCard(front: String, back: String) {
+        let newCard = Card(id: UUID(), front: front, back: back, lastTestTime: Date())
         self.cards?.append(newCard)
     }
     
-    func updateCard(cardID: Int) {
-        
+    func updateCard(cardID: String,  front:String, back: String) {
+        if let card = cards?.first(where: { $0.id.uuidString == cardID }) {
+            card.front = front
+            card.back = back
+        }
     }
     
-    func deleteCard(cardID: Int) {
-        
+    func deleteCard(cardID: String) {
+        if let cardIndex = cards?.firstIndex(where: { $0.id.uuidString == cardID }) {
+            cards?.remove(at: cardIndex)
+        }
     }
     
-    func getDueCards(date: Date) -> [Card]? {
+    func getDueCards() -> [Card]? {
         guard let cards = cards else { return nil }
-        return cards.filter { $0.isDue(date: date) }
+        return cards.filter { $0.isDue() }
     }
 }

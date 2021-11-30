@@ -18,7 +18,7 @@ class ConsoleIO {
         case .standard:
             print("\(message)")
         case .error:
-            fputs("Error: \(message)\n", stderr)
+            fputs("\u{001B}[0;31mError: \(message)\u{001B}[0;0m\n", stderr)
         }
     }
     
