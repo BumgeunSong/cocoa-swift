@@ -34,7 +34,7 @@ struct DeckView {
             consoleIO.write("명령어를 입력해주세요.")
             let (command, value) = deckManager.getDeckCommand(consoleIO.getInput())
             
-            switch command{
+            switch command {
             case .test: startTest()
             case .open: openDeck()
             case .create: createDeck()
