@@ -13,7 +13,6 @@ struct DeckView {
     var deckManager = DeckManager()
     var testView =  TestView()
     var cardView = CardView()
-//    var deck: Deck?
     
     mutating func enterDeckView() {
         consoleIO.write("\u{001B}[0;32mSprep에 오신 걸 환영합니다!\u{001B}[0;0m")
