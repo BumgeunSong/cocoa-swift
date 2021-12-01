@@ -22,13 +22,18 @@ class DeckViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "DeckItemCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "DeckItemCell", for: indexPath) as! DeckTableViewCell
         if let decks = deckManager.getDecks() {
             let deck = decks[indexPath.row]
+            
             var config = cell.defaultContentConfiguration()
             config.text = deck.name
             cell.contentConfiguration = config
+            cell.questionNumberLabel.text = String(deck.getNumberOfDueCards())
+//            print(cell.questionNumberLabel.text)
+//            print(String(deck.getNumberOfDueCards()))
         }
+        
         return cell
     }
     

@@ -43,15 +43,15 @@ class Deck {
         self.cards?.append(newCard)
     }
     
-    func updateCard(cardID: String,  front:String, back: String) {
-        if let card = cards?.first(where: { $0.id.uuidString == cardID }) {
+    func updateCard(card: Card,  front:String, back: String) {
+        if let card = cards?.first(where: { $0 === card }) {
             card.front = front
             card.back = back
         }
     }
     
-    func deleteCard(cardID: String) {
-        if let cardIndex = cards?.firstIndex(where: { $0.id.uuidString == cardID }) {
+    func deleteCard(card: Card) {
+        if let cardIndex = cards?.firstIndex(where: { $0 === card }) {
             cards?.remove(at: cardIndex)
         }
     }
@@ -60,6 +60,11 @@ class Deck {
         guard let cards = cards else { return nil }
         if cards.filter({$0.isDue()}).isEmpty { return nil }
         return cards.filter { $0.isDue() }
+    }
+    
+    func getNumberOfDueCards() -> Int {
+        guard let cards = cards else { return 0 }
+        return cards.filter({$0.isDue()}).count
     }
     
     func updateTestResult(card: Card, difficulty: DifficultyOption) {

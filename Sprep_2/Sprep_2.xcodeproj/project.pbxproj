@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		BC355C44275767000013EF5E /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC355C43275767000013EF5E /* TestViewController.swift */; };
+		BC8419692757A72E00FC5448 /* DeckTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8419682757A72E00FC5448 /* DeckTableViewCell.swift */; };
+		BC84196B2757B4CE00FC5448 /* NewCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC84196A2757B4CE00FC5448 /* NewCardViewController.swift */; };
 		BC99383B275743CC009186C4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC99383A275743CC009186C4 /* AppDelegate.swift */; };
 		BC99383D275743CC009186C4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC99383C275743CC009186C4 /* SceneDelegate.swift */; };
 		BC99383F275743CC009186C4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC99383E275743CC009186C4 /* ViewController.swift */; };
@@ -30,6 +32,8 @@
 
 /* Begin PBXFileReference section */
 		BC355C43275767000013EF5E /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
+		BC8419682757A72E00FC5448 /* DeckTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckTableViewCell.swift; sourceTree = "<group>"; };
+		BC84196A2757B4CE00FC5448 /* NewCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCardViewController.swift; sourceTree = "<group>"; };
 		BC993837275743CC009186C4 /* Sprep_2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sprep_2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC99383A275743CC009186C4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BC99383C275743CC009186C4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +67,44 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BC8419642757A22600FC5448 /* DeckManager */ = {
+			isa = PBXGroup;
+			children = (
+				BC99385F27574AA3009186C4 /* DeckManager.swift */,
+				BC99386127574AB2009186C4 /* DeckCommand.swift */,
+			);
+			path = DeckManager;
+			sourceTree = "<group>";
+		};
+		BC8419652757A24000FC5448 /* Deck */ = {
+			isa = PBXGroup;
+			children = (
+				BC99385B27574A2A009186C4 /* Deck.swift */,
+				BC99385D27574A3C009186C4 /* Card.swift */,
+				BC99386527574AD4009186C4 /* CardCommand.swift */,
+				BC99386727574ADA009186C4 /* Box.swift */,
+				BC99386327574AC1009186C4 /* Difficulty.swift */,
+			);
+			path = Deck;
+			sourceTree = "<group>";
+		};
+		BC8419662757A25200FC5448 /* Tester */ = {
+			isa = PBXGroup;
+			children = (
+				BC99386927574AE3009186C4 /* Tester.swift */,
+			);
+			path = Tester;
+			sourceTree = "<group>";
+		};
+		BC8419672757A26B00FC5448 /* etc. */ = {
+			isa = PBXGroup;
+			children = (
+				BC99386D27574B1D009186C4 /* DummyData.swift */,
+				BC993843275743CC009186C4 /* Sprep_2.xcdatamodeld */,
+			);
+			path = etc.;
+			sourceTree = "<group>";
+		};
 		BC99382E275743CC009186C4 = {
 			isa = PBXGroup;
 			children = (
@@ -95,16 +137,10 @@
 		BC9938572757472A009186C4 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				BC993843275743CC009186C4 /* Sprep_2.xcdatamodeld */,
-				BC99385F27574AA3009186C4 /* DeckManager.swift */,
-				BC99386D27574B1D009186C4 /* DummyData.swift */,
-				BC99386127574AB2009186C4 /* DeckCommand.swift */,
-				BC99385B27574A2A009186C4 /* Deck.swift */,
-				BC99386527574AD4009186C4 /* CardCommand.swift */,
-				BC99385D27574A3C009186C4 /* Card.swift */,
-				BC99386727574ADA009186C4 /* Box.swift */,
-				BC99386327574AC1009186C4 /* Difficulty.swift */,
-				BC99386927574AE3009186C4 /* Tester.swift */,
+				BC8419642757A22600FC5448 /* DeckManager */,
+				BC8419652757A24000FC5448 /* Deck */,
+				BC8419672757A26B00FC5448 /* etc. */,
+				BC8419662757A25200FC5448 /* Tester */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -132,8 +168,10 @@
 			children = (
 				BC99383E275743CC009186C4 /* ViewController.swift */,
 				BC993851275744C8009186C4 /* DeckViewController.swift */,
+				BC8419682757A72E00FC5448 /* DeckTableViewCell.swift */,
 				BC355C43275767000013EF5E /* TestViewController.swift */,
 				BC993853275744FC009186C4 /* CardViewController.swift */,
+				BC84196A2757B4CE00FC5448 /* NewCardViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -214,11 +252,13 @@
 				BC355C44275767000013EF5E /* TestViewController.swift in Sources */,
 				BC99386427574AC1009186C4 /* Difficulty.swift in Sources */,
 				BC99385E27574A3C009186C4 /* Card.swift in Sources */,
+				BC84196B2757B4CE00FC5448 /* NewCardViewController.swift in Sources */,
 				BC99386027574AA3009186C4 /* DeckManager.swift in Sources */,
 				BC99386A27574AE3009186C4 /* Tester.swift in Sources */,
 				BC99383F275743CC009186C4 /* ViewController.swift in Sources */,
 				BC99383B275743CC009186C4 /* AppDelegate.swift in Sources */,
 				BC993854275744FC009186C4 /* CardViewController.swift in Sources */,
+				BC8419692757A72E00FC5448 /* DeckTableViewCell.swift in Sources */,
 				BC99385C27574A2A009186C4 /* Deck.swift in Sources */,
 				BC993852275744C8009186C4 /* DeckViewController.swift in Sources */,
 				BC99383D275743CC009186C4 /* SceneDelegate.swift in Sources */,

@@ -13,80 +13,78 @@ class CardViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
     // MARK: - Table view data source
 
-
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return selectedDeck?.cards?.count ?? 0
+        if let cards = selectedDeck!.cards {
+            if cards.count != 0 { return cards.count }
+        }
+        return 1
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CardItemCell", for: indexPath)
-        if let item = selectedDeck?.cards?[indexPath.row] {
-            var config = cell.defaultContentConfiguration()
-            config.text = item.front
-            cell.contentConfiguration = config
+        var config = cell.defaultContentConfiguration()
+        if let cards = selectedDeck!.cards {
+            if cards.isEmpty {
+                config.text = "카드가 없습니다. +를 눌러 카드를 만들어주세요."
+            } else {
+                config.text = cards[indexPath.row].front
+            }
         }
-        
-        // Configure the cell...
-
+        cell.contentConfiguration = config
         return cell
     }
+ 
     
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+    @IBAction func addButtonPressed(_ sender: UIBarButtonItem) {
+        performSegue(withIdentifier: "goToNewCard", sender: selectedDeck)
     }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
+    
+    
+    override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let selectedRow = self.selectedDeck!.showCards()![indexPath.row]
+        let edit = UIContextualAction(style: .normal, title: "Rename") { action, view, completetionhandler in
+            self.editPressed(row: selectedRow)
+            completetionhandler(true)
+        }
+        edit.backgroundColor = UIColor(named: "Champagne Pink")
+        
+        let delete = UIContextualAction(style: .normal, title: "Delete") { action, view, completetionhandler in
+            self.deletePressed(row: selectedRow)
+            completetionhandler(true)
+        }
+        delete.backgroundColor = UIColor(named: "GoldenGate")
+        
+        let config = UISwipeActionsConfiguration(actions: [delete, edit])
+        config.performsFirstActionWithFullSwipe = false
+        return config
 
     }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
+    
+    func editPressed(row: Card) {
+        performSegue(withIdentifier: "goToNewCard", sender: selectedDeck)
     }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    func deletePressed(row: Card) {
+        let alert = UIAlertController(title: "정말로 삭제하시겠습니까?", message: "", preferredStyle: .alert)
+        
+        let delete = UIAlertAction(title: "삭제", style: .default) { action in
+            self.selectedDeck?.deleteCard(card: row)
+            self.tableView.reloadData()
+        }
+        
+        let cancel = UIAlertAction(title: "취소", style: .default) { action in
+        }
+        
+        alert.addAction(delete)
+        alert.addAction(cancel)
+        present(alert, animated: true, completion: nil)
+        
     }
-    */
-
+    
 }
