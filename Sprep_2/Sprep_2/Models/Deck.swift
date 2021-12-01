@@ -58,15 +58,12 @@ class Deck {
     
     func getDueCards() -> [Card]? {
         guard let cards = cards else { return nil }
+        if cards.filter({$0.isDue()}).isEmpty { return nil }
         return cards.filter { $0.isDue() }
     }
     
-    func arrangeCardIntoBox (result: [UUID:DifficultyOption]) {
-        for (key, value) in result {
-            guard let card = cards?.first(where: { $0.id == key }) else {
-                return
-            }
-            switch value {
+    func updateTestResult(card: Card, difficulty: DifficultyOption) {
+            switch difficulty {
             case .easy:
                 card.refreshTime()
                 card.moveToNextBox()
@@ -77,8 +74,7 @@ class Deck {
                 card.refreshTime()
                 card.moveToInitalBox()
             default:
-                continue
+                break
             }
-        }
     }
 }

@@ -15,13 +15,14 @@ struct DeckManager {
         return (DeckCommand(value: value), value)
     }
     
-    func showDecksAll() -> [Deck]? {
+    func getDecks() -> [Deck]? {
         if let decks = decks {
             return decks
         } else {
             return nil
         }
     }
+    
     
     func showDeck(name: String) -> Deck? {
         if let deck = decks?.first(where: { $0.name == name

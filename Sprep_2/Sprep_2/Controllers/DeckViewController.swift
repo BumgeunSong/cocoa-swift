@@ -8,82 +8,133 @@
 import UIKit
 
 class DeckViewController: UITableViewController {
-
+    
+    var deckManager = DeckManager()
+ 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        return deckManager.getDecks()?.count ?? 0
     }
-
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
+        let cell = tableView.dequeueReusableCell(withIdentifier: "DeckItemCell", for: indexPath)
+        if let decks = deckManager.getDecks() {
+            let deck = decks[indexPath.row]
+            var config = cell.defaultContentConfiguration()
+            config.text = deck.name
+            cell.contentConfiguration = config
+        }
         return cell
     }
-    */
+    
+    // MARK: - Table view Delegate
 
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // start test
+        if let decks = deckManager.getDecks() {
+            performSegue(withIdentifier: "goToTest", sender: decks[indexPath.row])
+        }
     }
-    */
 
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+    
+    override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let selectedRow = self.deckManager.getDecks()![indexPath.row]
+        let rename = UIContextualAction(style: .normal, title: "Rename") { action, view, completetionhandler in
+            self.renamePressed(row: selectedRow)
+            completetionhandler(true)
+        }
+        rename.backgroundColor = UIColor(named: "Champagne Pink")
+        
+        let open = UIContextualAction(style: .normal, title: "Open") { action, view, completetionhandler in
+            self.openPressed(row: selectedRow)
+            completetionhandler(true)
+        }
+        open.backgroundColor = UIColor(named: "Skobe")
+        
+        let delete = UIContextualAction(style: .normal, title: "Delete") { action, view, completetionhandler in
+            self.deletePressed(row: selectedRow)
+            completetionhandler(true)
+        }
+        delete.backgroundColor = UIColor(named: "GoldenGate")
+        
+        let config = UISwipeActionsConfiguration(actions: [delete, rename, open])
+        config.performsFirstActionWithFullSwipe = false
+        return config
+
     }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
+    
+    func renamePressed(row: Deck) {
+        let alert = UIAlertController(title: "바꿀 덱 이름을 입력해주세요.", message: "", preferredStyle: .alert)
+        
+        var textField = UITextField()
+        alert.addTextField { (alertTextField) in
+            alertTextField.placeholder = row.name
+            textField = alertTextField
+        }
+        
+        let action = UIAlertAction(title: "바꾸기", style: .default) { action in
+            self.deckManager.updateDeck(name: row.name, newName: textField.text!)
+            self.tableView.reloadData()
+        }
+        
+        alert.addAction(action)
+        present(alert, animated: true, completion: nil)
     }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
+    
+    func deletePressed(row: Deck) {
+        let alert = UIAlertController(title: "정말로 삭제하시겠습니까?", message: "", preferredStyle: .alert)
+        
+        let delete = UIAlertAction(title: "삭제", style: .default) { action in
+            self.deckManager.deleteDeck(name: row.name)
+            self.tableView.reloadData()
+        }
+        
+        let cancel = UIAlertAction(title: "취소", style: .default) { action in
+        }
+        
+        alert.addAction(delete)
+        alert.addAction(cancel)
+        present(alert, animated: true, completion: nil)
     }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    
+    func openPressed(row: Deck) {
+        performSegue(withIdentifier: "goToCards", sender: row)
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "goToCards" {
+            let destinationVC = segue.destination as! CardViewController
+            destinationVC.selectedDeck = sender as? Deck
+        } else if segue.identifier == "goToTest" {
+            let destinationVC = segue.destination as! TestViewController
+            destinationVC.tester = Tester(deck: sender as! Deck)
+        }
+        
     }
-    */
-
+    
+    
+    @IBAction func addButtonPressed(_ sender: UIBarButtonItem) {
+        let alert = UIAlertController(title: "새로운 덱의 이름을 입력해주세요.", message: "", preferredStyle: .alert)
+        
+        var textField = UITextField()
+        alert.addTextField { (alertTextField) in
+            alertTextField.placeholder = "덱 이름"
+            textField = alertTextField
+        }
+        
+        let action = UIAlertAction(title: "만들기", style: .default) { action in
+            self.deckManager.createDeck(name: textField.text!)
+            self.tableView.reloadData()
+        }
+        
+        alert.addAction(action)
+        present(alert, animated: true, completion: nil)
+    }
+    
+    
 }

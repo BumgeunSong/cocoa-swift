@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BC355C44275767000013EF5E /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC355C43275767000013EF5E /* TestViewController.swift */; };
 		BC99383B275743CC009186C4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC99383A275743CC009186C4 /* AppDelegate.swift */; };
 		BC99383D275743CC009186C4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC99383C275743CC009186C4 /* SceneDelegate.swift */; };
 		BC99383F275743CC009186C4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC99383E275743CC009186C4 /* ViewController.swift */; };
@@ -16,7 +17,6 @@
 		BC99384A275743CD009186C4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC993848275743CD009186C4 /* LaunchScreen.storyboard */; };
 		BC993852275744C8009186C4 /* DeckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC993851275744C8009186C4 /* DeckViewController.swift */; };
 		BC993854275744FC009186C4 /* CardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC993853275744FC009186C4 /* CardViewController.swift */; };
-		BC99385627574509009186C4 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC99385527574509009186C4 /* TestViewController.swift */; };
 		BC99385C27574A2A009186C4 /* Deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC99385B27574A2A009186C4 /* Deck.swift */; };
 		BC99385E27574A3C009186C4 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC99385D27574A3C009186C4 /* Card.swift */; };
 		BC99386027574AA3009186C4 /* DeckManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC99385F27574AA3009186C4 /* DeckManager.swift */; };
@@ -29,6 +29,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BC355C43275767000013EF5E /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		BC993837275743CC009186C4 /* Sprep_2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sprep_2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC99383A275743CC009186C4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BC99383C275743CC009186C4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -40,7 +41,6 @@
 		BC99384B275743CD009186C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BC993851275744C8009186C4 /* DeckViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckViewController.swift; sourceTree = "<group>"; };
 		BC993853275744FC009186C4 /* CardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewController.swift; sourceTree = "<group>"; };
-		BC99385527574509009186C4 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		BC99385B27574A2A009186C4 /* Deck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deck.swift; sourceTree = "<group>"; };
 		BC99385D27574A3C009186C4 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		BC99385F27574AA3009186C4 /* DeckManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckManager.swift; sourceTree = "<group>"; };
@@ -132,7 +132,7 @@
 			children = (
 				BC99383E275743CC009186C4 /* ViewController.swift */,
 				BC993851275744C8009186C4 /* DeckViewController.swift */,
-				BC99385527574509009186C4 /* TestViewController.swift */,
+				BC355C43275767000013EF5E /* TestViewController.swift */,
 				BC993853275744FC009186C4 /* CardViewController.swift */,
 			);
 			path = Controllers;
@@ -211,7 +211,7 @@
 			files = (
 				BC99386227574AB2009186C4 /* DeckCommand.swift in Sources */,
 				BC99386827574ADA009186C4 /* Box.swift in Sources */,
-				BC99385627574509009186C4 /* TestViewController.swift in Sources */,
+				BC355C44275767000013EF5E /* TestViewController.swift in Sources */,
 				BC99386427574AC1009186C4 /* Difficulty.swift in Sources */,
 				BC99385E27574A3C009186C4 /* Card.swift in Sources */,
 				BC99386027574AA3009186C4 /* DeckManager.swift in Sources */,
@@ -375,7 +375,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = A6HM92H898;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Sprep_2/Info.plist;
+				INFOPLIST_FILE = Sprep_2/Supports/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -403,7 +403,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = A6HM92H898;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Sprep_2/Info.plist;
+				INFOPLIST_FILE = Sprep_2/Supports/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

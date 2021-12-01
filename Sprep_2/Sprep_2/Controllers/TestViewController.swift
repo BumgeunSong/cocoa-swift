@@ -7,83 +7,95 @@
 
 import UIKit
 
-class TestViewController: UITableViewController {
+class TestViewController: UIViewController {
+    
+    var tester: Tester?
+    var testQueue: [Card]?
+    var currentIndex: Int = 0
 
+    @IBOutlet weak var answerLabel: UILabel!
+    @IBOutlet weak var questionLabel: UILabel!
+    
+    @IBOutlet var difficultyButton: [UIButton]!
+    @IBOutlet weak var answerButton: UIButton!
+    
+    @IBOutlet weak var timeSpentLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        self.testQueue = tester?.getTestQueue()
+        presentNextQuestion()
     }
 
-    // MARK: - Table view data source
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+    @IBAction func answerPressed(_ sender: UIButton) {
+        if self.testQueue == nil { return }
+        presentNextAnswer()
+        toggleButtonEnabled()
     }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+    
+    @IBAction func difficultyPressed(_ sender: UIButton) {
+        guard let testQueue = testQueue else {
+            return
+        }
+        if currentIndex >= testQueue.count {
+            questionLabel.text = "모든 질문이 끝났습니다!"
+            answerLabel.text = ""
+            timeSpentLabel.text = ""
+        } else {
+            updateResult(sender: sender)
+            presentNextQuestion()
+            toggleButtonEnabled()
+            
+        }
     }
-
-    /*
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
-        return cell
+    
+    func updateResult(sender: UIButton) {
+        var difficulty = DifficultyOption.unknown
+        if sender.tag == 1 {
+            difficulty = .easy
+        } else if sender.tag == 2 {
+            difficulty = .medium
+        } else if sender.tag == 3 {
+            difficulty = .hard
+        }
+        tester?.updateTestResult(card: testQueue![currentIndex], difficulty: difficulty)
     }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+    
+    
+    func presentNextQuestion() {
+        guard let testQueue = self.testQueue else {
+            questionLabel.text = "공부해야할 질문이 없습니다!"
+            return
+        }
+        
+        questionLabel.text = testQueue[currentIndex].front
+        answerLabel.text = ""
+        startWatch()
+        
     }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+    
+    func presentNextAnswer() {
+        if let currentCard = self.testQueue?[currentIndex] {
+            answerLabel.text = currentCard.back
+            currentIndex += 1
+            stopWatch()
+        }
     }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
+    
+    func startWatch() {
+        tester?.startWatch()
+        timeSpentLabel.text = ""
     }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
+    
+    func stopWatch() {
+        tester?.stopWatch()
+        timeSpentLabel.text = String(format: "%.1f초 소요", tester!.getTimeSpent())
     }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    func toggleButtonEnabled() {
+        answerButton.isEnabled = !answerButton.isEnabled
+        for button in difficultyButton {
+            button.isEnabled = !button.isEnabled
+        }
     }
-    */
-
 }

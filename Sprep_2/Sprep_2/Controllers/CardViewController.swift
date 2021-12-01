@@ -9,6 +9,8 @@ import UIKit
 
 class CardViewController: UITableViewController {
 
+    var selectedDeck: Deck?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,25 +23,26 @@ class CardViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return selectedDeck?.cards?.count ?? 0
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CardItemCell", for: indexPath)
+        if let item = selectedDeck?.cards?[indexPath.row] {
+            var config = cell.defaultContentConfiguration()
+            config.text = item.front
+            cell.contentConfiguration = config
+        }
+        
         // Configure the cell...
 
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.
