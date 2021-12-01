@@ -7,9 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BC9D6C922757105900518A10 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9D6C912757105900518A10 /* TestViewController.swift */; };
+		BC9D6C942757106D00518A10 /* CardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9D6C932757106D00518A10 /* CardViewController.swift */; };
+		BC9D6C962757107700518A10 /* DeckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9D6C952757107700518A10 /* DeckViewController.swift */; };
 		BCE48CB32753AFB500028475 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE48CB22753AFB500028475 /* AppDelegate.swift */; };
 		BCE48CB52753AFB500028475 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE48CB42753AFB500028475 /* SceneDelegate.swift */; };
-		BCE48CB72753AFB500028475 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE48CB62753AFB500028475 /* ViewController.swift */; };
 		BCE48CBA2753AFB500028475 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCE48CB82753AFB500028475 /* Main.storyboard */; };
 		BCE48CBD2753AFB500028475 /* Sprep.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BCE48CBB2753AFB500028475 /* Sprep.xcdatamodeld */; };
 		BCE48CBF2753AFB600028475 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCE48CBE2753AFB600028475 /* Assets.xcassets */; };
@@ -37,10 +39,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BC9D6C912757105900518A10 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
+		BC9D6C932757106D00518A10 /* CardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewController.swift; sourceTree = "<group>"; };
+		BC9D6C952757107700518A10 /* DeckViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckViewController.swift; sourceTree = "<group>"; };
 		BCE48CAF2753AFB500028475 /* Sprep.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sprep.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCE48CB22753AFB500028475 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BCE48CB42753AFB500028475 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		BCE48CB62753AFB500028475 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		BCE48CB92753AFB500028475 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BCE48CBC2753AFB500028475 /* Sprep.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Sprep.xcdatamodel; sourceTree = "<group>"; };
 		BCE48CBE2753AFB600028475 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -78,6 +82,42 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BC9D6C97275710CE00518A10 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BCE48CB82753AFB500028475 /* Main.storyboard */,
+				BCE48CC02753AFB600028475 /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BC9D6C98275710DB00518A10 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BC9D6C912757105900518A10 /* TestViewController.swift */,
+				BC9D6C932757106D00518A10 /* CardViewController.swift */,
+				BC9D6C952757107700518A10 /* DeckViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		BC9D6C99275710E400518A10 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BCE48CBB2753AFB500028475 /* Sprep.xcdatamodeld */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BC9D6C9A275710FE00518A10 /* Supporting files */ = {
+			isa = PBXGroup;
+			children = (
+				BCE48CBE2753AFB600028475 /* Assets.xcassets */,
+				BCE48CC32753AFB600028475 /* Info.plist */,
+			);
+			path = "Supporting files";
+			sourceTree = "<group>";
+		};
 		BCE48CA62753AFB500028475 = {
 			isa = PBXGroup;
 			children = (
@@ -103,12 +143,10 @@
 			children = (
 				BCE48CB22753AFB500028475 /* AppDelegate.swift */,
 				BCE48CB42753AFB500028475 /* SceneDelegate.swift */,
-				BCE48CB62753AFB500028475 /* ViewController.swift */,
-				BCE48CB82753AFB500028475 /* Main.storyboard */,
-				BCE48CBE2753AFB600028475 /* Assets.xcassets */,
-				BCE48CC02753AFB600028475 /* LaunchScreen.storyboard */,
-				BCE48CC32753AFB600028475 /* Info.plist */,
-				BCE48CBB2753AFB500028475 /* Sprep.xcdatamodeld */,
+				BC9D6C9A275710FE00518A10 /* Supporting files */,
+				BC9D6C99275710E400518A10 /* Model */,
+				BC9D6C98275710DB00518A10 /* Controller */,
+				BC9D6C97275710CE00518A10 /* View */,
 			);
 			path = Sprep;
 			sourceTree = "<group>";
@@ -262,8 +300,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				BCE48CBD2753AFB500028475 /* Sprep.xcdatamodeld in Sources */,
-				BCE48CB72753AFB500028475 /* ViewController.swift in Sources */,
+				BC9D6C962757107700518A10 /* DeckViewController.swift in Sources */,
+				BC9D6C942757106D00518A10 /* CardViewController.swift in Sources */,
 				BCE48CB32753AFB500028475 /* AppDelegate.swift in Sources */,
+				BC9D6C922757105900518A10 /* TestViewController.swift in Sources */,
 				BCE48CB52753AFB500028475 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

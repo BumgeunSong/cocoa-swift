@@ -19,7 +19,7 @@ struct DeckView {
         
         var shouldQuit = false
         while !shouldQuit {
-            consoleIO.write("-------------현재 Deck-------------")
+            consoleIO.write("----------현재 Deck------------")
             
             var deckString = ""
             if let currentDecks = deckManager.showDecksAll() {
@@ -29,8 +29,8 @@ struct DeckView {
             }
             consoleIO.write(deckString)
             consoleIO.write("------------------------------")
-            consoleIO.write("----------Deck 명령어----------\ntest: 테스트 시작하기\nnew: 새로운 덱 만들기\nopen: 덱 열고 카드 보기\nchange: 덱 이름 바꾸기\nremove: 덱 이름 바꾸기\nq: 프로그램 종료하기")
-            consoleIO.write("---------------------------")
+            consoleIO.write("----------Deck 명령어-----------\ntest: 테스트 시작하기\nnew: 새로운 덱 만들기\nopen: 덱 열고 카드 보기\nchange: 덱 이름 바꾸기\nremove: 덱 삭제하기\nq: 프로그램 종료하기")
+            consoleIO.write("------------------------------")
             consoleIO.write("명령어를 입력해주세요.")
             let (command, value) = deckManager.getDeckCommand(consoleIO.getInput())
             
@@ -61,7 +61,7 @@ struct DeckView {
    
     
     mutating func openDeck() {
-        consoleIO.write("---------현재 Deck----------")
+        consoleIO.write("----------현재 Deck------------")
         
         var deckString = ""
         if let currentDecks = deckManager.showDecksAll() {
@@ -71,7 +71,7 @@ struct DeckView {
             return
         }
         consoleIO.write(deckString)
-        consoleIO.write("---------------------------")
+        consoleIO.write("------------------------------")
         
         consoleIO.write("열고 싶은 덱 이름을 입력하세요.")
         let deckName = consoleIO.getInput()

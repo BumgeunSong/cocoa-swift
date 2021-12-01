@@ -25,10 +25,12 @@ struct CardView {
             consoleIO.write("---------\(deck.name)---------")
             var currentCardsString = ""
             if let currentCards = deck.showCards() {
-                currentCardsString = currentCards.map({ "Card ID: \($0.id)\n\($0.front)\n--------------------" })
-                    .joined(separator: "\n")
-            } else {
-                currentCardsString = "아직 카드가 없습니다. 카드를 만들어주세요."
+                if currentCards.isEmpty {
+                    currentCardsString = "아직 카드가 없습니다. 카드를 만들어주세요."
+                } else {
+                    currentCardsString = currentCards.map({ "Card ID: \($0.id)\n\($0.front)\n--------------------" })
+                        .joined(separator: "\n")
+                }
             }
             
             consoleIO.write(currentCardsString)
@@ -39,10 +41,7 @@ struct CardView {
             
             switch command{
             case .create: newCard()
-            case .update:
-                print("update!")
-                print("value: \(value), command:\(command)")
-                updateCard()
+            case .update: updateCard()
             case .delete: deleteCard()
             case .quit: consoleIO.write("다음에 만나요!")
                 shouldQuit = true
