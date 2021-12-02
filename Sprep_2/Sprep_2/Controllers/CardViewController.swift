@@ -108,7 +108,5 @@ class CardViewController: UITableViewController {
     
     @IBAction override func unwind(for unwindSegue: UIStoryboardSegue, towards subsequentVC: UIViewController) {
         performSegue(withIdentifier: "unwindToCard", sender: self.selectedDeck)
-        tableView.reloadData()
-        print("reLoad")
     }
 }

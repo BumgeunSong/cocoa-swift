@@ -30,7 +30,9 @@ class DeckViewController: UITableViewController {
             var config = cell.defaultContentConfiguration()
             config.text = deck.name
             cell.contentConfiguration = config
-            cell.questionNumLabel.text = String(deck.getNumberOfDueCards())
+            
+            // Cell에 남은 질문의 갯수 표시하기
+//            cell.questionNumLabel.text = String(deck.getNumberOfDueCards())
 //            print(cell.questionNumberLabel.text)
 //            print(String(deck.getNumberOfDueCards()))
         }

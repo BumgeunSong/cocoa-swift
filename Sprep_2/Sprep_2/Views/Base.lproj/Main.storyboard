@@ -350,7 +350,6 @@
                                         </buttonConfiguration>
                                         <connections>
                                             <action selector="completePressed:" destination="qxa-UK-Bju" eventType="touchUpInside" id="CxH-QC-ycZ"/>
-                                            <segue destination="V5C-yf-BnD" kind="unwind" identifier="unwindToCard" unwindAction="unwindFor:towards:" id="T0l-KG-s0x"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -373,7 +372,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SHm-5x-QaZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <exit id="V5C-yf-BnD" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1708.6956521739132" y="827.67857142857144"/>
         </scene>
@@ -402,6 +400,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="pjt-y5-PWc"/>
         <segue reference="UTv-Yz-zrA"/>
     </inferredMetricsTieBreakers>
     <resources>
