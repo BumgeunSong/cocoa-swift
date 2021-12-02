@@ -17,11 +17,11 @@ class Dummy {
 
 class DummyCards {
 
-    var card1 = Card(id: UUID(),front: "라운드 로빈(Round-Robin) CPU 스케줄링은 무엇인가?", back: "먼저 온 프로세스부터 처리하되, '제한 시간'을 두고 자원을 뺏는다.\n장점: 특정 프로세스의 자원 독점을 방지한다.\n단점: 컨텍스트 스위칭 비용이 많이 든다.", lastTestTime: Date.init(timeIntervalSinceNow: Double.random(in: (-300000)..<(-86400))))
+    var card1 = Card(id: UUID(),front: "운영체제란 무엇인가?", back: "운영체제는 컴퓨터 시스템을 운영하는 소프트웨어다. 즉, 하드웨어를 다룰 수 있는 기능을 어플리케이션에게 제공해준다.", lastTestTime: Date.init(timeIntervalSinceNow: Double.random(in: (-300000)..<(-86400))))
     
     var card2 = Card(id: UUID(), front: "지역성(Locality)이란 무엇인가?", back: "프로세스가 데이터의 특정 영역을 집중적으로 참조하는 현상. \n한번 참조한 곳이나 최근에 참조한 곳을 더 많이 참조하는 현상이다.", lastTestTime: Date.init(timeIntervalSinceNow: Double.random(in: (-300000)..<(-86400))))
     
-    var card3 = Card(id: UUID(), front: "블로킹 작업과 논블로킹 작업의 차이는 무엇인가?", back: "블로킹 작업을 호출하면 작업이 끝날 때까지 기다렸다가 다음 작업을 해야 한다.\n논블로킹 작업을 호출하면 작업이 끝날 때까지 기다리지 않고 다른 일을 할 수 있다.",  lastTestTime: Date.init(timeIntervalSinceNow: Double.random(in: (-300000)..<(-86400))))
+    var card3 = Card(id: UUID(), front: "프로세스란 무엇인가?", back: "실행 중인 프로그램을 말한다. 좀 더 정확히 말하면, 운영체제가 메모리를 할당해서 프로세서가 연산할 준비가 된 프로그램이다.",  lastTestTime: Date.init(timeIntervalSinceNow: Double.random(in: (-300000)..<(-86400))))
     
     var card4 = Card(id: UUID(), front: "컨텍스트 스위칭(Context Switching)이란?", back: "컨텍스트 스위칭은 CPU에서 처리 중인 프로세스가 바뀌는 것을 의미한다. \n컨텍스트 스위칭은 최소화하는 것이 성능에 좋다.", lastTestTime: Date.init(timeIntervalSinceNow: Double.random(in: (-300000)..<(-86400))))
     

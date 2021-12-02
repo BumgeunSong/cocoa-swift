@@ -69,6 +69,7 @@ class TestViewController: UIViewController {
         }
         
         questionLabel.text = testQueue[currentIndex].front
+        questionLabel.lineBreakMode = .byWordWrapping
         answerLabel.text = ""
         startWatch()
         
@@ -77,6 +78,7 @@ class TestViewController: UIViewController {
     func presentNextAnswer() {
         if let currentCard = self.testQueue?[currentIndex] {
             answerLabel.text = currentCard.back
+            answerLabel.lineBreakMode = .byWordWrapping
             currentIndex += 1
             stopWatch()
         }

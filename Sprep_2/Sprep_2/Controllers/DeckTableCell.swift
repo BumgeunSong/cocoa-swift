@@ -1,22 +1,20 @@
 //
-//  DeckTableViewCell.swift
+//  DeckTableCell.swift
 //  Sprep_2
 //
-//  Created by Bumgeun Song on 2021/12/01.
+//  Created by Bumgeun Song on 2021/12/02.
 //
 
 import UIKit
 
-class DeckTableViewCell: UITableViewCell {
-    @IBOutlet weak var questionNumberLabel: UILabel!
+class DeckTableCell: UITableViewCell {
+
     @IBOutlet weak var questionNumLabel: UILabel!
-    
     override func awakeFromNib() {
         super.awakeFromNib()
+        
         if questionNumLabel == nil {
-                print("No question label")
-        } else {
-            questionNumLabel.text = "testtest"
+            print("It's nil!")
         }
     }
 
@@ -25,5 +23,5 @@ class DeckTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
+    
 }

@@ -13,6 +13,7 @@ class DeckViewController: UITableViewController {
  
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.register(UINib(nibName: "DeckTableCell", bundle: nil), forCellReuseIdentifier: "DeckTableCell")
     }
 
     // MARK: - Table view data source
@@ -22,14 +23,14 @@ class DeckViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "DeckItemCell", for: indexPath) as! DeckTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "DeckTableCell", for: indexPath) as! DeckTableCell
         if let decks = deckManager.getDecks() {
             let deck = decks[indexPath.row]
             
             var config = cell.defaultContentConfiguration()
             config.text = deck.name
             cell.contentConfiguration = config
-            cell.questionNumberLabel.text = String(deck.getNumberOfDueCards())
+            cell.questionNumLabel.text = String(deck.getNumberOfDueCards())
 //            print(cell.questionNumberLabel.text)
 //            print(String(deck.getNumberOfDueCards()))
         }
@@ -132,12 +133,16 @@ class DeckViewController: UITableViewController {
             textField = alertTextField
         }
         
-        let action = UIAlertAction(title: "만들기", style: .default) { action in
+        let create = UIAlertAction(title: "만들기", style: .default) { action in
             self.deckManager.createDeck(name: textField.text!)
             self.tableView.reloadData()
         }
         
-        alert.addAction(action)
+        let cancel = UIAlertAction(title: "취소", style: .default) { action in
+        }
+        
+        alert.addAction(create)
+        alert.addAction(cancel)
         present(alert, animated: true, completion: nil)
     }
     

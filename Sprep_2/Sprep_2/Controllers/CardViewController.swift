@@ -47,8 +47,8 @@ class CardViewController: UITableViewController {
     
     
     override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        let selectedRow = self.selectedDeck!.showCards()![indexPath.row]
-        let edit = UIContextualAction(style: .normal, title: "Rename") { action, view, completetionhandler in
+        let selectedRow = self.selectedDeck!.getCardsAll()![indexPath.row]
+        let edit = UIContextualAction(style: .normal, title: "Edit") { action, view, completetionhandler in
             self.editPressed(row: selectedRow)
             completetionhandler(true)
         }
@@ -67,7 +67,26 @@ class CardViewController: UITableViewController {
     }
     
     func editPressed(row: Card) {
-        performSegue(withIdentifier: "goToNewCard", sender: selectedDeck)
+        performSegue(withIdentifier: "goToNewCard", sender: row)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destinationVC = segue.destination as! NewCardViewController
+        if sender is Deck {
+            destinationVC.selectedDeck = sender as? Deck
+        } else if sender is Card {
+            destinationVC.selectedCard = sender as? Card
+        }
+//
+//
+//        if segue.identifier == "goToCards" {
+//            let destinationVC = segue.destination as! CardViewController
+//            destinationVC.selectedDeck = sender as? Deck
+//        } else if segue.identifier == "goToTest" {
+//            let destinationVC = segue.destination as! TestViewController
+//            destinationVC.tester = Tester(deck: sender as! Deck)
+//        }
+        
     }
     
     func deletePressed(row: Card) {
@@ -87,4 +106,9 @@ class CardViewController: UITableViewController {
         
     }
     
+    @IBAction override func unwind(for unwindSegue: UIStoryboardSegue, towards subsequentVC: UIViewController) {
+        performSegue(withIdentifier: "unwindToCard", sender: self.selectedDeck)
+        tableView.reloadData()
+        print("reLoad")
+    }
 }

@@ -8,6 +8,8 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    var selectedCard: Card?
 
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -17,26 +17,9 @@ class Deck {
     var cards: [Card]?
     var name: String
     
-    func getCardCommand(_ command: String) -> (option: CardCommand, value: String) {
-        return (CardCommand(value: command), command)
+    func getCardsAll() -> [Card]? {
+        return cards
     }
-    
-    func showCards() -> [Card]? {
-        if let cards = cards {
-            return cards
-        } else {
-            return nil
-        }
-    }
-    
-    func showCard(id: String) -> Card? {
-        if let card = cards?.first(where: { $0.id.uuidString == id }) {
-            return card
-        } else {
-            return nil
-        }
-    }
-    
     
     func createCard(front: String, back: String) {
         let newCard = Card(id: UUID(), front: front, back: back, lastTestTime: Date())
